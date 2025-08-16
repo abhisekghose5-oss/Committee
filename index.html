@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official website of Ganesh Puja Committee, Punanga — events, gallery, members, donations, and contact information." />
+  <title>GANESH PUJA COMMITTEE • Punanga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary:#0055a4;
+      --primary-dark:#003366;
+      --accent:#ffcc00;
+      --bg:#f5f5f5;
+      --text:#333;
+      --card:#fff;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Roboto',sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit}
+    /* Header / Hero */
+    header{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;text-align:center;padding:56px 20px}
+    header h1{margin:0;font-size:2.6rem;letter-spacing:.5px}
+    header p{margin:.5rem 0 1.25rem;font-size:1.05rem;opacity:.95}
+    .cta-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:#fff;color:var(--primary-dark);font-weight:700;text-decoration:none;box-shadow:0 6px 14px rgba(0,0,0,.15);transition:transform .2s,opacity .2s}
+    .btn:hover{transform:translateY(-1px);opacity:.95}
+    .btn-outline{background:transparent;color:#fff;border:2px solid #fff}
+
+    /* Nav */
+    nav{position:sticky;top:0;z-index:1000;background:var(--primary);box-shadow:0 4px 8px rgba(0,0,0,.1)}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+    .brand{font-weight:800;color:#fff;letter-spacing:.5px}
+    .links a{color:#fff;text-decoration:none;margin:0 10px;font-weight:700}
+    .links a:hover{color:var(--accent)}
+
+    /* Layout */
+    main{max-width:1100px;margin:auto;padding:22px}
+    section{background:var(--card);border-radius:var(--radius);padding:22px;margin:0 0 26px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+    h2{color:var(--primary-dark);margin-top:0}
+
+    /* Grid helpers */
+    .grid{display:grid;gap:16px}
+    .two{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .three{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+    /* Events */
+    .event{padding:14px;border:1px solid #e8e8e8;border-radius:12px}
+    .event h3{margin:.2rem 0}
+    .badge{display:inline-block;background:var(--primary);color:#fff;border-radius:999px;padding:2px 10px;font-size:.8rem;margin-left:8px}
+
+    /* Members */
+    .card{padding:16px;border:1px solid #eee;border-radius:12px}
+    .card h4{margin:.2rem 0}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .gallery img{width:100%;border-radius:10px;cursor:pointer;display:block;transition:transform .25s}
+    .gallery img:hover{transform:scale(1.03)}
+
+    /* Donate */
+    .donate-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:center}
+    .qr{width:100%;max-width:220px;border-radius:12px;border:1px dashed #ccc;padding:8px;background:#fff}
+    .upi{font-weight:800;color:var(--primary-dark)}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea,select,button{padding:12px;font-size:1rem;border-radius:10px;border:1px solid #d9d9d9}
+    button{background:var(--primary);color:#fff;border:none;font-weight:800;cursor:pointer}
+    button:hover{background:var(--primary-dark)}
+
+    /* Footer */
+    footer{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;text-align:center;padding:26px;margin-top:28px}
+    .foot-links a{color:#fff;text-decoration:none;margin:0 10px;font-weight:700}
+    .foot-links a:hover{color:var(--accent)}
+
+    /* Back to top */
+    #toTop{position:fixed;right:14px;bottom:14px;display:none;padding:10px 14px;border-radius:999px;background:var(--primary);color:#fff;border:none;cursor:pointer;box-shadow:0 8px 16px rgba(0,0,0,.2)}
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <header>
+    <h1>GANESH PUJA COMMITTEE • PUNANGA</h1>
+    <p>Celebrating 6 Glorious Years of Devotion and Community Service 🙏🎉</p>
+    <div class="cta-wrap">
+      <!-- TODO: Replace with your real map link -->
+      <a class="btn" href="https://maps.google.com/?q=Punanga" target="_blank" rel="noopener">Get Directions</a>
+      <!-- TODO: Replace with real WhatsApp group invite link -->
+      <a class="btn btn-outline" href="https://wa.me/" target="_blank" rel="noopener">Join WhatsApp Group</a>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="brand">Ganesh Puja Punanga</div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#members">Members</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#donate">Donate</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About the Committee</h2>
+      <p><strong>Shree Shree Ganesh Puja Committee, Punanga</strong> began in <strong>2020</strong>. With the blessings of Lord Ganesha and with your support, we proudly celebrate our <strong>6th anniversary</strong>. Our mission is to organise inclusive , and a meaningful Ganesh Chaturthi celebration for all.</p>
+
+<p> Our Ganesh Puja journey began humbly, with just me—Anshuman—alongside my friends Subham and Abhishek. In a small space, with very little money, we set up our very first puja. It wasn’t grand, but the devotion in our hearts made it special. The second year, the puja grew a little bigger. This time, our families came forward with their support, and we felt the strength of togetherness.
+
+By the third year, the celebration reached another level. With the active help of our villagers, everything was more organized and beautiful. The puja had become more than just ours—it had become our community’s pride. The fourth year brought an even bigger step forward. With a large murti and strong support from both parents and villagers, the festival truly blossomed into a grand occasion.
+
+The fifth year saw a well-decorated mandap, a bigger Ganesh murti, and a sense of joy that spread across the entire village. And now, as we prepare for the sixth, with the efforts of me, Subham, Abhishek, and Omm, the puja is set to become the grandest yet—a true journey from zero to hero.</p>
+
+      <div class="grid two">
+        <div class="card">
+          <h3>Our Motto</h3>
+          <p>“<em>Vasudhaiva Kutumbakam</em> — the world is one family.” We welcome everyone to participate and volunteer.</p>
+        </div>
+        <div class="card">
+          <h3>Location & Timings</h3>
+          <p><strong>Punanga</strong> • Sandhya Aarti at <strong>7:00 PM</strong> during the festival days. See Events below for the full schedule.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS / SCHEDULE -->
+    <section id="events">
+      <h2>Festival Schedule</h2>
+      <div class="grid two">
+        <div class="event">
+          <h3>Dt-26: Agamn of Ganpati  <span class="badge">Opening</span></h3>
+           <p> Singhasan sthapana </p>       </div>
+        <div class="event">
+          <h3>Dt-27: Pranapratishtha <span class="badge">PUJA</span></h3>
+          <p>Morning: Kalash Sthapana ,Maha Arati ,Pushpanjai ,Prasad Seban </p>
+        </div>
+        <div class="Pushpanjali">
+          <h3>Dt-28 : Ganpati puja</h3>
+          <p>Arati , prasad sevan <h3> Evening </h3> Sandhya Arati</p>
+        </div>
+        <div class="event">
+          <h3>Dt-29 : Visarjan Procession </h3>
+          <p>Visarjan Jatra</p>
+        </div>
+      <!--  <div class="event">
+          <h3>Day 5: Visarjan Procession <span class="badge">Grand</span></h3>
+          <p>Procession starts at 4:00 PM. Join with discipline and devotion.</p>
+        </div>-->
+      </div>
+    </section>
+
+    <!-- MEMBERS -->
+    <section id="members">
+      <h2>Committee Members</h2>
+      <div class="grid three">
+        <div class="card"><h4>Abhisek Ghose</h4><p> </p></div>
+        <div class="card"><h4>Subham Banerjee</h4><p> </p></div>
+        <div class="card"><h4>Anshuman Banerjee</h4><p> </p></div>
+        <div class="card"><h4>Ommkarnath Goswami</h4><p> </p></div>
+        <!-- Add more members as needed -->
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <p>Replace the image files with your own photos in an <code>images/</code> folder, or use hosted URLs.</p>
+      <div class="gallery">
+        <!-- NOTE: Replace src with your actual image paths or URLs -->
+        <img src="C:\Users\abhis\OneDrive\Pictures\puja.jpg" onclick="openModal(this)" />
+        <img src="C:\Users\abhis\OneDrive\Pictures\committee.jpg" onclick="openModal(this)" />
+        <img src="C:\Users\abhis\OneDrive\Pictures\ganesh.jpg"onclick="openModal(this)" />
+       
+ <img src="images/ganesh-4.jpg" alt="Cultural Program" onclick="openModal(this)" />
+      </div>
+    </section>
+
+    <!-- DONATE -->
+    <section id="donate">
+      <h2>Support the Puja</h2>
+      <div class="donate-box">
+        <div>
+          <p>Your contributions help us run social initiatives and organise the festival smoothly. You can donate via UPI or bank transfer.</p>
+        <!--  <p>UPI ID: <span class="upi">your-upi@bank</span></p>-->
+          <p>
+            <a class="btn" href="#contact">Become a Volunteer</a>
+            <!-- TODO: Replace with your payment link (e.g., Razorpay/Paytm/Google Pay) -->
+            <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Donate Online</a>
+          </p>
+        </div>
+        <!-- Put your real QR code image in /images and update src -->
+        <img class="qr" src="C:\Users\abhis\OneDrive\Pictures\Pujaupi.jpg"/>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Join our Committee .</h2>
+      <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+        <!-- Replace with your Formspree endpoint or use mailto: -->
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+        <input type="email" name="email" placeholder="Email (optional)" />
+        <select name="interest" required>
+          <option value="">I want to…</option>
+          <option value="volunteer">Volunteer</option>
+          <option value="donate">Donate</option>
+          <option value="perform">Perform in Cultural Night</option>
+          <option value="general">General Query</option>
+        </select>
+        <textarea name="message" rows="5" placeholder="Your message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p style="margin-top:8px">Or email us: <a href="mailto:ganeshpunanga@example.com">ganeshpunanga@example.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="foot-links">
+      <!-- Replace # with your real links -->
+      <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a> •
+      <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a> •
+      <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+    </p>
+    <p>&copy; <span id="yr"></span> Ganesh Puja Committee, Punanga. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal for gallery -->
+  <div id="imgModal" class="modal" aria-hidden="true" role="dialog">
+    <span class="close" onclick="closeModal()" aria-label="Close">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Expanded gallery image" />
+  </div>
+
+  <button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+
+  <script>
+    // Year in footer
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Gallery modal
+    function openModal(img){
+      const modal = document.getElementById('imgModal');
+      document.getElementById('modalImg').src = img.src;
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden','false');
+    }
+    function closeModal(){
+      const modal = document.getElementById('imgModal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+    }
+    window.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+
+    // Back to top visibility
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll',()=>{
+      toTop.style.display = window.scrollY>300 ? 'block':'none';
+    });
+  </script>
+</body>
+</html>
