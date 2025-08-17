@@ -93,9 +93,202 @@
     }
     .join-btn:hover {
       background-color: #0056b3; /* Darker Blue */
-    }  </style>
-</head>
-<body>
+    }  
+   
+    /* new  */
+
+
+        body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    section#gallery {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    section#gallery h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    section#gallery p {
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    /* Responsive Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      overflow: auto;
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      display: block;
+      margin: auto;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close:hover {
+      color: red;
+    }
+
+    #caption {
+      margin: 15px auto;
+      text-align: center;
+      color: #ccc;
+      font-size: 1.2rem;
+    }
+
+ /* new  */
+
+ /* new profile photo */
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Picture</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .profile-pic {
+      width: 100px;         /* small size */
+      height: 100px;
+      border-radius: 50%;   /* round shape */
+      object-fit: cover;
+      border: 3px solid #444;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.1);  /* zoom in on hover */
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      border-color: #ff5722;  /* glowing border color */
+    }
+
+    /* New Code */
+
+     body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    section#members {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    section#members h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Grid layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #444;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.1);
+      border-color: #ff5722;
+    }
+
+    .card h4 {
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* new profile */
+  </style>
+  
+
+
+
+
   <!-- HERO -->
   <header>
     <h1>GANESH PUJA COMMITTEE • PUNANGA</h1>
@@ -179,30 +372,98 @@ The fifth year saw a well-decorated mandap, a bigger Ganesh murti, and a sense o
     </section>
 
     <!-- MEMBERS -->
-    <section id="members">
+    <!--<section id="members">
       <h2>Committee Members</h2>
       <div class="grid three">
         <div class="card"><h4>Abhisek Ghose</h4><p> </p></div>
         <div class="card"><h4>Subham Banerjee</h4><p> </p></div>
         <div class="card"><h4>Anshuman Banerjee</h4><p> </p></div>
-        <div class="card"><h4>Ommkarnath Goswami</h4><p> </p></div>
+        <div class="card"><h4>Ommkarnath Goswami</h4><p> </p></div>-->
         <!-- Add more members as needed -->
       </div>
     </section>
 
+
+
+    <!--new Gallery-->
+
+
     <!-- GALLERY -->
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <p>image<code>images/</code>.</p>
-      <div class="gallery">
-        <!-- NOTE: Replace src with your actual image paths or URLs -->
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/ganesh.jpg" onclick="openModal(this)" />
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/committee.jpg" onclick="openModal(this)" />
-        <img src=" "onclick="openModal(this)" />
-       
- <img src="images/ganesh-4.jpg" alt="Cultural Program" onclick="openModal(this)" />
+  <section id="gallery">
+    <h2>Admin Gallery</h2>
+    <p>Click on the images to view in full size.</p>
+    <div class="gallery">
+      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/ganesh.jpg" alt="Ganesh Idol" onclick="openModal(this)">
+      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/committee.jpg" alt="Committee Group" onclick="openModal(this)">
+      <img src="https://via.placeholder.com/400x250.png?text=Coming+Soon" alt="Coming Soon" onclick="openModal(this)">
+      <img src="https://via.placeholder.com/400x250.png?text=Event+Highlights" alt="Event Highlights" onclick="openModal(this)">
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="imgModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div id="caption"></div>
+  </div>
+
+  <script>
+    function openModal(img) {
+      document.getElementById("imgModal").style.display = "block";
+      document.getElementById("modalImg").src = img.src;
+      document.getElementById("caption").innerHTML = img.alt;
+    }
+
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+
+    // Optional: Close modal on click outside image
+    window.onclick = function(event) {
+      const modal = document.getElementById("imgModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+<!--new Gallary-->
+
+<!--new profile -->
+
+
+
+  <section id="members">
+    <h2>Committee Members</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/44569db3423b711def46002d5e9828dab184588d/Abhisek.jpg" alt="Abhisek Ghose" class="profile-pic">
+        <h4>Abhisek Ghose</h4>
+        <p>Member</p>
       </div>
-    </section>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/4923d76336490c3ac67196ecc9604b7e3943f62f/Subham.jpg.jpg" alt="Subham Banerjee" class="profile-pic">
+        <h4>Subham Banerjee</h4>
+        <p>Member</p>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/a9faf814658261405cb0d901cfc3f7b98a4d1ef0/Anshuman.jpg" alt="Anshuman Banerjee" class="profile-pic">
+        <h4>Anshuman Banerjee</h4>
+        <p>Member</p>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/a9faf814658261405cb0d901cfc3f7b98a4d1ef0/omm.jpg" alt="Ommkarnath Goswami" class="profile-pic">
+        <h4>Ommkarnath Goswami</h4>
+        <p>Member</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!--ew profile-->
+</body>
 
     <!-- DONATE -->
     <section id="donate">
@@ -244,7 +505,7 @@ The fifth year saw a well-decorated mandap, a bigger Ganesh murti, and a sense o
       </form>-->
      <!-- <p style="margin-top:8px"> <h2>email us:</h2> <a href="abhisekghose5@gmail.com"></a><a class="btn" href="#contact">Join Us</a></a></p>--><!--shreeshreeganeshpujacommitteep@gmail.comshreeshreeganeshpujacommitteep@gmail.com-->
       <p style="margin-top:8px"> 
-      <a class="join-btn " href="mailto:abhisekghose5@gmail.com?subject=Feedback&body=Hello,%0A%0APlease sheare your details below:%0A%0AName:%20__________________%0AEmail:%20__________________%0AContact%20No:%20__________________%0A%0AThank%20you!">Join</a>
+      <a class="join-btn " href="mailto:abhisekghose5@gmail.com?subject=Feedback&body=Hello,%0A%0APlease sheare your details below:%0A%0AName:%20%0AEmail:%20%0AContact%20No:%20%0A%0AThank%20you!">Join</a>
     </section>
   </main>
 
@@ -266,6 +527,26 @@ The fifth year saw a well-decorated mandap, a bigger Ganesh murti, and a sense o
   </div>
 
   <button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+
+  <!--Gallary-->
+
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <p>image<code>images/</code>.</p>
+      <div class="gallery">
+        <!-- NOTE: Replace src with your actual image paths or URLs -->
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/ganesh.jpg" onclick="openModal(this)" />
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/committee.jpg" onclick="openModal(this)" />
+        <img src=" "onclick="openModal(this)" />
+       
+ <img src="images/ganesh-4.jpg" alt="Cultural Program" onclick="openModal(this)" />
+
+
+      </div>
+    </section>
+  <!--Gallary-->
 
   <script>
     // Year in footer
