@@ -5,50 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ଜନମା ଜଗତ୍ମିଶ୍ର ସୁର୍ଣ୍ଣଦିପି ଗରିୟସା</title>
   <style>
+    /* Set page size for print */
+    @page {
+      size: A4;
+      margin: 20mm;
+    }
+
     body {
       font-family: "Noto Sans Oriya", Arial, sans-serif;
       background-color:#fff9cc;
-      margin: 20px;
+      margin: 0;
+      padding: 0;
       color: #000;
+      display: flex;
+      justify-content: center;
     }
+
     .container {
       background-color:#ffff00;
       border: 2px solid red;
       padding: 20px;
-      max-width: 800px;
-      margin: auto;
+      width: 2000mm;   /* A4 width */
+      min-height: 290mm; /* A4 height */
+      box-sizing: border-box;
     }
+
     .header {
       display: flex;
       align-items: flex-start;
       margin-bottom: 20px;
     }
+
     img.logo {
       width: 4cm;
       height: 4cm;
       margin-right: 20px;
     }
+
     .text-content {
       flex: 1;
     }
+
     h1, h2, h3, h4 {
       color: red;
       margin: 0;
       padding-bottom: 10px;
       text-align: left;
     }
+
     .section {
       margin-bottom: 20px;
     }
+
     .important {
       border: 1px solid red;
       padding: 10px;
       background-color: #ff9999;
-       color: Red; /* New text color */
+      color: red;
     }
+
     p {
       line-height: 1.6;
       margin-bottom: 10px;
+    }
+
+    /* For print preview */
+    @media print {
+      body {
+        background: none;
+      }
+      .container {
+        border: none;
+        background: #fff;
+        box-shadow: none;
+      }
     }
   </style>
 </head>
@@ -65,17 +95,17 @@
     </div>
 
     <div class="important">
-      <p><h3> ଶାରଦୀୟ ଅଭିନନ୍ଦନ - ୨୦୨୫</h3></p>
-      <p><h3>ଯା ଦେବୀ ସର୍ବଭୂତେଷୁ,
+      <h3> ଶାରଦୀୟ ଅଭିନନ୍ଦନ - ୨୦୨୫</h3>
+      <h3>ଯା ଦେବୀ ସର୍ବଭୂତେଷୁ,
         ଶକ୍ତି ରୂପେଣ ସଂସ୍ଥିତା,
         ନମସ୍ତସୈ ନମସ୍ତସୈ,
-        ନମସ୍ତସୈ ନମୋନମଃ ।
-      </h3></p>
+        ନମସ୍ତସୈ ନମୋନମଃ ।
+      </h3>
     </div>
 
     <div class="section">
       <h3>ଷଷ୍ଠୀ :</h3>
-      <p>ଆଶ୍ଵିନ ୨୮ ସେପ୍ଟେମ୍ବର ୨୦୨୫ (ରବିବାର‌): ସନ୍ଧ୍ୟା ଘ୫.୪୨ମି ଗତେ ସାରଂକାଳେ ଦେବୀଙ୍କର ଆତ୍ମବଣ ଓ ଅଧିବାସ</p>
+      <p>ଆଶ୍ଵିନ ୨୮ ସେପ୍ଟେମ୍ବର ୨୦୨୫ (ରବିବାର‌): ସନ୍ଧ୍ୟା ଘ୫.୪୨ମି ଗତେ ସାରଂକାଳେ ଦେବୀଙ୍କର ଆତ୍ମବଣ ଓ ଅଧିବାସ</p>
     </div>
 
     <div class="section">
@@ -106,10 +136,6 @@
       <p>ଘୋଷପରିବାର, ପୁନଙ୍ଗ, ଜଗତସିଂହପୁର</p>
     </div>
 
-    <!--<div class="section">
-      <h3>ଯୋଗାଯୋଗ:</h3>
-      <p>ଶ୍ରୀ ଶ୍ରୀ ଲକ୍ଷ୍ମୀଜନାର୍ଦନ ମଣ୍ଡପ</p>
-    </div>-->
   </div>
 </body>
 </html>
