@@ -302,6 +302,194 @@
     }
 
     /* End new profile */
+
+
+    
+    /*  Backgrouund photo addd */
+
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+
+  /* Background image */
+  background-image: url("https://raw.githubusercontent.com/abhisekghose5-oss/Committee/18c274f9991c5a2f2e5a89fc3d5d4aac6c632aec/Admin7.jpg"); /* Replace with your image URL */
+  background-size: cover;       /* Make it cover the entire page */
+  background-position: center;  /* Center the image */
+  background-repeat: no-repeat; /* Don't repeat */
+  background-attachment: fixed; /* Stays in place on scroll */
+  
+  /* Optional: add overlay to make text readable */
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255,255,255,0.4); /* white overlay with 40% opacity */
+  z-index: 0;
+}
+
+main, header, section, footer {
+  position: relative; /* make content appear above overlay */
+  z-index: 1;
+}
+
+
+/* End Background photo */
+
+
+
+/* Trannsforent background */
+
+
+
+section,
+.card,
+.event {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover,
+.card:hover,
+.event:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+header {
+  background: url('your-background.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* parallax effect */
+}
+
+
+const faders = document.querySelectorAll('.fade-in');
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
+});
+
+
+.btn, .join-btn {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover, .join-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  filter: brightness(1.05);
+}
+
+/* About section with transparent background */
+section#about {
+  background-color: rgba(255, 255, 255, 0.7); /* white with 70% opacity */
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  color: #333; /* text color */
+}
+
+
+section#events,
+section#members {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header text in blue */
+header h1,
+header p {
+  color: #0055a4; /* blue color */
+}
+
+
+/* Headings inside all sections */
+section h2,
+section h3,
+section h4 {
+  color: #0055a4; /* blue color */
+}
+
+
+/* Get Directions button */
+header .btn {
+  background-color: #0055a4; /* blue */
+  color: #fff;               /* white text */
+  border: none;              /* remove border */
+}
+
+header .btn:hover {
+  background-color: #003366; /* darker blue on hover */
+  transform: translateY(-2px);
+}
+
+/* Instagram button (outline style) */
+header .btn-outline {
+  background-color: #0055a4; /* blue background */
+  color: #fff;
+  border: 2px solid #0055a4; /* match border */
+}
+
+header .btn-outline:hover {
+  background-color: #003366; /* darker blue on hover */
+  border-color: #003366;
+  transform: translateY(-2px);
+}
+
+
+/* Admin Gallery section transparent background */
+section#gallery {
+  background-color: rgba(255, 255, 255, 0.75); /* white with 75% opacity */
+  border-radius: 12px;                          /* rounded corners */
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);   /* subtle 3D lift */
+}
+
+
+/* Donate / Support the Puja section transparent background */
+section#donate {
+  background-color: rgba(255, 255, 255, 0.75); /* white with 75% opacity */
+  border-radius: 12px;                          /* rounded corners */
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);   /* subtle 3D lift */
+}
+
+
+
+
+/* End Transforent background */
+
+
+
   </style>
   
 
@@ -311,7 +499,7 @@
   <!-- HERO -->
   <header>
     <h1>GANESH PUJA COMMITTEE • PUNANGA</h1>
-    <p>Celebrating 6 Glorious Years of Devotion and Community Service 🙏🎉</p>
+    <p><h2>Celebrating 6 Glorious Years of Devotion and Community Service 🙏🎉</h2></p>
     <div class="cta-wrap">
       <!-- TODO: Replace with your real map link -->
       <a class="btn" href="https://maps.app.goo.gl/fgUYoy8r14NccckC8" target="_blank" rel="noopener">Get Directions</a>
