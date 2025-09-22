@@ -1,141 +1,618 @@
 <!DOCTYPE html>
-<html lang="or">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ଜନମା ଜଗତ୍ମିଶ୍ର ସୁର୍ଣ୍ଣଦିପି ଗରିୟସା</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official website of Ganesh Puja Committee, Punanga — events, gallery, members, donations, and contact information." />
+  <title>GANESH PUJA COMMITTEE • Punanga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Set page size for print */
-    @page {
-      size: A4;
-      margin: 20mm;
-    }
 
-    body {
-      font-family: "Noto Sans Oriya", Arial, sans-serif;
-      background-color:#fff9cc;
+    :root {
+      --primary:#0055a4;
+      --primary-dark:#003366;
+      --accent:#ffcc00;
+      --bg:#f5f5f5;
+      --text:#333;
+      --card:#fff;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Roboto',sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit}
+    /* Header / Hero */
+    header{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;text-align:center;padding:56px 20px}
+    header h1{margin:0;font-size:2.6rem;letter-spacing:.5px}
+    header p{margin:.5rem 0 1.25rem;font-size:1.05rem;opacity:.95}
+    .cta-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:#fff;color:var(--primary-dark);font-weight:700;text-decoration:none;box-shadow:0 6px 14px rgba(0,0,0,.15);transition:transform .2s,opacity .2s}
+    .btn:hover{transform:translateY(-1px);opacity:.95}
+    .btn-outline{background:transparent;color:#fff;border:2px solid #fff}
+
+    /* Nav */
+    nav{position:sticky;top:0;z-index:1000;background:var(--primary);box-shadow:0 4px 8px rgba(0,0,0,.1)}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+    .brand{font-weight:800;color:#fff;letter-spacing:.5px}
+    .links a{color:#fff;text-decoration:none;margin:0 10px;font-weight:700}
+    .links a:hover{color:var(--accent)}
+
+    /* Layout */
+    main{max-width:1100px;margin:auto;padding:22px}
+    section{background:var(--card);border-radius:var(--radius);padding:22px;margin:0 0 26px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+    h2{color:var(--primary-dark);margin-top:0}
+
+    /* Grid helpers */
+    .grid{display:grid;gap:16px}
+    .two{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .three{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+    /* Events */
+    .event{padding:14px;border:1px solid #e8e8e8;border-radius:12px}
+    .event h3{margin:.2rem 0}
+    .badge{display:inline-block;background:var(--primary);color:#fff;border-radius:999px;padding:2px 10px;font-size:.8rem;margin-left:8px}
+
+    /* Members */
+    .card{padding:16px;border:1px solid #eee;border-radius:12px}
+    .card h4{margin:.2rem 0}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .gallery img{width:100%;border-radius:10px;cursor:pointer;display:block;transition:transform .25s}
+    .gallery img:hover{transform:scale(1.03)}
+
+    /* Donate */
+    .donate-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:center}
+    .qr{width:100%;max-width:220px;border-radius:12px;border:1px dashed #ccc;padding:8px;background:#fff}
+    .upi{font-weight:800;color:var(--primary-dark)}
+    
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea,select,button{padding:12px;font-size:1rem;border-radius:10px;border:1px solid #d9d9d9}
+    button{background:var(--primary);color:#fff;border:none;font-weight:800;cursor:pointer}
+    button:hover{background:var(--primary-dark)}
+
+    /* Footer */
+    footer{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;text-align:center;padding:26px;margin-top:28px}
+    .foot-links a{color:#fff;text-decoration:none;margin:0 10px;font-weight:700}
+    .foot-links a:hover{color:var(--accent)}
+
+    /* Back to top */
+    #toTop{position:fixed;right:14px;bottom:14px;display:none;padding:10px 14px;border-radius:999px;background:var(--primary);color:#fff;border:none;cursor:pointer;box-shadow:0 8px 16px rgba(0,0,0,.2)}
+ .join-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #007BFF; /* Blue */
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .join-btn:hover {
+      background-color: #0056b3; /* Darker Blue */
+    }  
+   
+    /* new  */
+
+
+        body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      color: #000;
-      display: flex;
-      justify-content: center;
+      background: #f8f9fa;
+      color: #333;
     }
 
-    .container {
-      background-color:#ffff00;
-      border: 2px solid red;
-      padding: 20px;
-      width: 2000mm;   /* A4 width */
-      min-height: 290mm; /* A4 height */
-      box-sizing: border-box;
+    section#gallery {
+      padding: 40px 20px;
+      text-align: center;
     }
 
-    .header {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-
-    img.logo {
-      width: 4cm;
-      height: 4cm;
-      margin-right: 20px;
-    }
-
-    .text-content {
-      flex: 1;
-    }
-
-    h1, h2, h3, h4 {
-      color: red;
-      margin: 0;
-      padding-bottom: 10px;
-      text-align: left;
-    }
-
-    .section {
-      margin-bottom: 20px;
-    }
-
-    .important {
-      border: 1px solid red;
-      padding: 10px;
-      background-color: #ff9999;
-      color: red;
-    }
-
-    p {
-      line-height: 1.6;
+    section#gallery h2 {
+      font-size: 2rem;
       margin-bottom: 10px;
     }
 
-    /* For print preview */
-    @media print {
-      body {
-        background: none;
-      }
-      .container {
-        border: none;
-        background: #fff;
-        box-shadow: none;
-      }
+    section#gallery p {
+      margin-bottom: 20px;
+      color: #555;
     }
+
+    /* Responsive Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      overflow: auto;
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      display: block;
+      margin: auto;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close:hover {
+      color: red;
+    }
+
+    #caption {
+      margin: 15px auto;
+      text-align: center;
+      color: #ccc;
+      font-size: 1.2rem;
+    }
+
+ /* End new  */
+
+
+
+ /* new profile photo */
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Picture</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 50px;
+    }
+
+
+
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">"
+  <title>Profile Picture</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+    
+
+    
+
+    .profile-pic {
+      width: 100px;         /* small size */
+      height: 100px;
+      border-radius: 50%;   /* round shape */
+      object-fit: cover;
+      border: 3px solid #444;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.1);  /* zoom in on hover */
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      border-color: #ff5722;  /* glowing border color */
+    }
+
+    /* New Code */
+
+     body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    section#members {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    section#members h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Grid layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #444;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.1);
+      border-color: #ff5722;
+    }
+
+    .card h4 {
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* End new profile */
   </style>
-</head>
-<body>
-  <div class="container">
-    <!-- Header with image on the left and text on the right -->
-    <div class="header">
-      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/5078ac057ad5fb1af0a41ee438bd0238700209d6/Shree.jpg.jpg" alt="ଶ୍ରୀ ଚିତ୍ର" class="logo" />
-      <div class="text-content">
-        <h1>ଓଁ ଶ୍ରୀ ଶ୍ରୀ ଦୂର୍ଗାୟ ନମଃ</h1>
-        <h2>ଜନନୀ ଜନ୍ମଭୂମିଶ୍ଚ ସ୍ବର୍ଗାଦପି ଗରିୟସୀ ।</h2>
-        <h2>ଶ୍ରୀ ଶ୍ରୀ ଲକ୍ଷ୍ମୀଜନାର୍ଦନ ମଣ୍ଡପ</h2>
+  
+
+
+
+
+  <!-- HERO -->
+  <header>
+    <h1>GANESH PUJA COMMITTEE • PUNANGA</h1>
+    <p>Celebrating 6 Glorious Years of Devotion and Community Service 🙏🎉</p>
+    <div class="cta-wrap">
+      <!-- TODO: Replace with your real map link -->
+      <a class="btn" href="https://maps.app.goo.gl/fgUYoy8r14NccckC8" target="_blank" rel="noopener">Get Directions</a>
+      <!-- TODO: Replace with real WhatsApp group invite link -->
+      <a class="btn btn-outline" href="https://www.instagram.com/ganapati_puja_committee?igsh=MWg4YjRpOXh1Mms0bw==" target="_blank" rel="noopener">Join Instagram</a>
+    </div>
+  </header>
+
+
+  <!-- NAV -->
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="brand">Ganesh Puja Committee Punanga</div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#members">Members</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#donate">Donate</a>
+        <a href="#contact">Join</a>
       </div>
     </div>
+  </nav>
 
-    <div class="important">
-      <h3> ଶାରଦୀୟ ଅଭିନନ୍ଦନ - ୨୦୨୫</h3>
-      <h3>ଯା ଦେବୀ ସର୍ବଭୂତେଷୁ,
-        ଶକ୍ତି ରୂପେଣ ସଂସ୍ଥିତା,
-        ନମସ୍ତସୈ ନମସ୍ତସୈ,
-        ନମସ୍ତସୈ ନମୋନମଃ ।
-      </h3>
+   
+ <!-- End NAV -->
+  <main>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About the Committee</h2>
+      <p><strong>Shree Shree Ganesh Puja Committee, Punanga</strong> began in <strong>2020</strong>. With the blessings of Lord Ganesha and with your support, we proudly celebrate our <strong>6th anniversary</strong>. Our mission is to organise inclusive , and a meaningful Ganesh Chaturthi celebration for all.</p>
+
+<section id="about"> <h3>Our Journy of Ganesh Puja : </h3><h3>Written By Anshuman Banarjee</h3>
+<p> Our Ganesh Puja journey began humbly, with just me—Anshuman—alongside my friends Subham and Abhishek. In a small space, with very little money, we set up our very first puja. It wasn’t grand, but the devotion in our hearts made it special. The second year, the puja grew a little bigger. This time, our families came forward with their support, and we felt the strength of togetherness.
+
+By the third year, the celebration reached another level. With the active help of our villagers, everything was more organized and beautiful. The puja had become more than just ours—it had become our community’s pride. The fourth year brought an even bigger step forward. With a large murti and strong support from both parents and villagers, the festival truly blossomed into a grand occasion.
+
+The fifth year saw a well-decorated mandap, a bigger Ganesh murti, and a sense of joy that spread across the entire village. And now, as we prepare for the sixth, with the efforts of me, Subham, Abhishek, and Omm, the puja is set to become the grandest yet—a true journey from zero to hero.</p>
+</section>
+      <div class="grid two">
+        <div class="card">
+          <h3>Our Motto</h3>
+          <p>“<em>Vasudhaiva Kutumbakam</em> — the world is one family.” We welcome everyone to participate and volunteer.</p>
+        </div>
+        <div class="card">
+          <h3>Location </h3>
+          <p><strong>Punanga</strong> • Morning puja <strong>10:00 PM</strong>. Sandhya puja .<strong>7:00</strong> during the festival days. See Events below for the full schedule.</p>
+        </div>
+      </div>
+    </section>
+<!--End  ABOUT -->
+
+
+
+    <!-- EVENTS / SCHEDULE -->
+    <section id="events">
+      <h2>Festival Schedule</h2>
+      <div class="grid two">
+        <div class="event">
+          <h3>Dt-26: Agamn of Ganpati  <span class="badge">Opening</span></h3>
+           <p> Singhasan sthapana </p>       </div>
+       
+           <div class="event">
+          <h3>Dt-27: Pranapratishtha <span class="badge">PUJA</span></h3>
+          <p><h4>Morning: </h4>Kalash Sthapana ,Maha Arati ,Pushpanjai ,Prasad Seban </p>
+          <p> <h4>Evening :</h4> Sandhya  Arati , Prasad Sevan</p>
+        </div>
+
+        <div class="event">
+          <h3>Dt-28 : Ganpati puja </h3>
+          <p>Arati , prasad sevan <h3> Evening </h3> Sandhya Arati</p>
+        </div>
+        
+        <div class="event">
+          <h3>Dt-29 : Visarjan Procession </h3>
+          <p>Visarjan Jatra</p>
+        </div>
+      <!--  <div class="event">
+          <h3>Day 5: Visarjan Procession <span class="badge">Grand</span></h3>
+          <p>Procession starts at 4:00 PM. Join with discipline and devotion.</p>
+        </div>-->
+      </div>
+    </section>
+
+    <!-- MEMBERS -->
+    <!--<section id="members">
+      <h2>Committee Members</h2>
+      <div class="grid three">
+        <div class="card"><h4>Abhisek Ghose</h4><p> </p></div>
+        <div class="card"><h4>Subham Banerjee</h4><p> </p></div>
+        <div class="card"><h4>Anshuman Banerjee</h4><p> </p></div>
+        <div class="card"><h4>Ommkarnath Goswami</h4><p> </p></div>-->
+        <!-- Add more members as needed -->
+      </div>
+    </section>
+
+ <!-- End EVENTS / SCHEDULE -->
+
+
+
+    <!--new Gallery-->
+
+
+    <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Admin Gallery</h2>
+    <p>Click on the images to view in full size.</p>
+    <div class="gallery">
+      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/ganesh.jpg" alt="Ganesh Idol" onclick="openModal(this)">
+      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/committee.jpg" alt="Committee Group" onclick="openModal(this)">
+      <img src="https://via.placeholder.com/400x250.png?text=Coming+Soon" alt="Coming Soon" onclick="openModal(this)">
+      <img src="https://via.placeholder.com/400x250.png?text=Event+Highlights" alt="Event Highlights" onclick="openModal(this)">
     </div>
+  </section>
 
-    <div class="section">
-      <h3>ଷଷ୍ଠୀ :</h3>
-      <p>ଆଶ୍ଵିନ ୨୮ ସେପ୍ଟେମ୍ବର ୨୦୨୫ (ରବିବାର‌): ସନ୍ଧ୍ୟା ଘ୫.୪୨ମି ଗତେ ସାରଂକାଳେ ଦେବୀଙ୍କର ଆତ୍ମବଣ ଓ ଅଧିବାସ</p>
-    </div>
-
-    <div class="section">
-      <h3>ସପ୍ତମୀ :</h3>
-      <p>ଆଶ୍ଵିନ ୨୯ ସେପ୍ଟେମ୍ବର ୨୦୨୫ (ସୋମ‌ବାର‌): ଦିବା ଘ୮.୨୯ମି ଗତେ ପୂର୍ବାହ୍ନ ମଧ୍ୟ ଶ୍ରୀ ଶ୍ରୀ ଦୁର୍ଗାଦେବୀଙ୍କର ନବପତ୍ରିକା ପ୍ରବେଶ ଓ ସ୍ଥାପନ ପରେ କଳ୍ପାରମ୍ଭ ଓ ସପ୍ତମୀ ବିହିତ ପୂଜା ପ୍ରସ୍ଥାନ ।</p>
-    </div>
-
-    <div class="section">
-      <h3>ମହାଷ୍ଟମୀ :</h3>
-      <p>ଆଶ୍ୱିନ ୩୦ ସେପ୍ଟେମ୍ବର ୨୦୨୫ (ମଙ୍ଗଳବାର‌): ସକାଳ ଘ୫.୪୦ମି ଗତେ ପୂର୍ବାହ୍ନ ଘ୯.୨୯ମି ମଧ୍ୟ ଦେବୀଙ୍କର ମହାଷ୍ଟମୀ ଆରମ୍ଭ ଏବଂ ମହାଷ୍ଟମୀ ବିହିତ ପୂଜା ପ୍ରଶସ୍ତା ।</p>
-      <h4>- ସନ୍ଧିପୂଜା -</h4>
-      <p>ଉକ୍ତ ଦିନ ଦିବା ଘ୧.୨୧ମି ଗତେ ସନ୍ଧିପୂଜା ଆରମ୍ଭ, ଦିବା ଘ୧.୪୫ମି ଗତେ ବଳିଦାନ ଏବଂ ଦିବା ଘ୨.୦୯ମି ମଧ୍ୟ ସନ୍ଧିପୂଜା ସମାପନ ପରେ ପୁଷ୍ପାଞ୍ଜଳି ଓ ମହାମେରୁ ଦର୍ଶନ।</p>
-    </div>
-
-    <div class="section">
-      <h3>ମହାନବମୀ :</h3>
-      <p>ଆଶ୍ଵିନ ୦୧ ଅକ୍ଟୋବର ୨୦୨୫ (ବୁଧବାର): ଦିବା ଘ୮.୨୯ମି ମଧ୍ୟ ଦେବୀଙ୍କର ମହାନବମୀ କଳ୍ପାରମ୍ଭ ଏବଂ ଘ୨.୩୬ମି ପର୍ଯ୍ୟନ୍ତ ମହାନବମୀ ପୂଜା ପ୍ରଶସ୍ତା। ପରେ ମହାନବମୀ ହୋମ ଏବଂ ଦେବୀ ଭଗବତୀ ପୂଜା ସମାପନ।</p>
-    </div>
-
-    <div class="section">
-      <h3>ବିଜୟା ଦଶମୀ :</h3>
-      <p>ଆଶ୍ଵିନ ୦୨ ଅକ୍ଟୋବର ୨୦୨୫ (ଗୁରୁବାର‌): ପୂର୍ବାହ୍ନ ଘ୯.୨୯ମି ମଧ୍ୟ ଦିବା ଘ୨.୫୬ମି ପର୍ଯ୍ୟନ୍ତ ଦଶମୀ ବିହିତ ପୂଜା ପ୍ରଶସ୍ତା ଓ ଘଟ ବିସର୍ଜନ। ଦେବୀଙ୍କର ଦୋଳାୟ ଗମନଂ – ଫଳଂ ମଡ଼କଂ।</p>
-    </div>
-
-    <div class="section">
-      <h3>(ନିବେଦକ)</h3>
-      <p>ଶ୍ରୀ ସୁବୋଧ ଚନ୍ଦ୍ର ଘୋଷ</p>
-      <p>ଘୋଷପରିବାର, ପୁନଙ୍ଗ, ଜଗତସିଂହପୁର</p>
-    </div>
-
+  <!-- Modal -->
+  <div id="imgModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div id="caption"></div>
   </div>
+
+  <script>
+    function openModal(img) {
+      document.getElementById("imgModal").style.display = "block";
+      document.getElementById("modalImg").src = img.src;
+      document.getElementById("caption").innerHTML = img.alt;
+    }
+
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+
+    // Optional: Close modal on click outside image
+    window.onclick = function(event) {
+      const modal = document.getElementById("imgModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+<!--End new Gallary-->
+
+<!--new profile -->
+
+
+
+  <section id="members">
+    <h2>Committee Members</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/44569db3423b711def46002d5e9828dab184588d/Abhisek.jpg" alt="Abhisek Ghose" class="profile-pic">
+        <h4>Abhisek Ghose</h4>
+        <p>Member</p>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/4923d76336490c3ac67196ecc9604b7e3943f62f/Subham.jpg.jpg" alt="Subham Banerjee" class="profile-pic">
+        <h4>Subham Banerjee</h4>
+        <p>Member</p>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/a9faf814658261405cb0d901cfc3f7b98a4d1ef0/Anshuman.jpg" alt="Anshuman Banerjee" class="profile-pic">
+        <h4>Anshuman Banerjee</h4>
+        <p>Member</p>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/a9faf814658261405cb0d901cfc3f7b98a4d1ef0/omm.jpg" alt="Ommkarnath Goswami" class="profile-pic">
+        <h4>Ommkarnath Goswami</h4>
+        <p>Member</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!--End new profile-->
 </body>
+
+
+
+    <!-- DONATE -->
+    <section id="donate">
+      <h2>Support the Puja</h2>
+      <div class="donate-box">
+        <div>
+          <p>Your contributions help us run social initiatives and organise the festival smoothly. You can donate via UPI or bank transfer.</p>
+        <!--  <p>UPI ID: <span class="upi">your-upi@bank</span></p>-->
+          <p>
+            <a class="btn" href="#contact">Become a Member</a>
+            <!-- TODO: Replace with your payment link (e.g., Razorpay/Paytm/Google Pay) -->
+           <!-- <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Donate Online</a>-->
+          </p>
+        </div>
+        <!-- Put your real QR code image in /images and update src -->
+        <img class="qr" src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/Pujaupi.jpg"/>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Join our Committee .</h2>
+      <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+       
+       
+        <!-- Replace with your Formspree endpoint or use mailto: -->
+       <!-- <input type="text" name="name" placeholder="Your Name" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+        <input type="email" name="email" placeholder="Email (optional)" />
+        <select name="interest" required>
+          <option value="">I want to…</option>
+          <option value="volunteer">Volunteer</option>
+          <option value="donate">Donate</option>
+          <option value="perform">Perform in Cultural Night</option>
+          <option value="general">General Query</option>
+        </select>
+        <textarea name="message" rows="5" placeholder="Your message"></textarea>
+        <button type="submit">Send</button>
+      </form>-->
+     <!-- <p style="margin-top:8px"> <h2>email us:</h2> <a href="abhisekghose5@gmail.com"></a><a class="btn" href="#contact">Join Us</a></a></p>--><!--shreeshreeganeshpujacommitteep@gmail.comshreeshreeganeshpujacommitteep@gmail.com-->
+      <p style="margin-top:8px"> 
+      <a class="join-btn " href="mailto:abhisekghose5@gmail.com?subject=Feedback&body=Hello,%0A%0APlease sheare your details below:%0A%0AName:%20%0AEmail:%20%0AContact%20No:%20%0A%0AThank%20you!">Join</a>
+    </section>
+  </main>
+
+  <footer>
+    <p class="foot-links">
+      <!-- Replace # with your real links -->
+      <a href="https://www.instagram.com/ganapati_puja_committee?igsh=MWg4YjRpOXh1Mms0bw==" target="_blank" rel="noopener">Instagram</a> •
+      <a href="https://www.facebook.com/share/1CcvVjbtqf/" target="_blank" rel="noopener">Facebook</a> •
+     
+     <!-- <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+    </p>-->
+    <p>&copy; <span id="yr"></span> Ganesh Puja Committee, Punanga ,Jagatsinghapur. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal for gallery -->
+  <div id="imgModal" class="modal" aria-hidden="true" role="dialog">
+    <span class="close" onclick="closeModal()" aria-label="Close">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Expanded gallery image" />
+  </div>
+
+  <button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+
+  <!--Gallary-->
+
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <p>image<code>images/</code>.</p>
+      <div class="gallery">
+        <!-- NOTE: Replace src with your actual image paths or URLs -->
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/ganesh.jpg" onclick="openModal(this)" />
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/committee.jpg" onclick="openModal(this)" />
+        <img src=" "onclick="openModal(this)" />
+       
+ <img src="images/ganesh-4.jpg" alt="Cultural Program" onclick="openModal(this)" />
+
+
+  <!-- Video Player -->
+  <video width="400" controls>
+    <source src="your-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!--end Video Player-->
+
+      </div>
+    </section>
+  <!--End Gallary-->
+
+  <script>
+    // Year in footer
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Gallery modal
+    function openModal(img){
+      const modal = document.getElementById('imgModal');
+      document.getElementById('modalImg').src = img.src;
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden','false');
+    }
+    function closeModal(){
+      const modal = document.getElementById('imgModal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+    }
+    window.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+
+    // Back to top visibility
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll',()=>{
+      toTop.style.display = window.scrollY>300 ? 'block':'none';
+    });
+  </script>
+</body>
+
+
+
 </html>
