@@ -483,6 +483,71 @@ section#donate {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);   /* subtle 3D lift */
 }
 
+/* Stylish Festival Schedule event boxes */
+section#events .event {
+  background: linear-gradient(135deg, #ffffff, #fef9f0); /* soft gradient */
+  border-radius: 16px;       /* slightly more rounded */
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), inset 0 0 8px rgba(255, 204, 0, 0.1); /* 3D + inner glow */
+  border: 2px solid rgba(255, 204, 0, 0.3); /* subtle golden border */
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative floating sparkle effect inside box */
+section#events .event::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255, 204, 0, 0.15) 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+/* Hover effect */
+section#events .event:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18), inset 0 0 12px rgba(255, 204, 0, 0.15);
+  border-color: rgba(255, 204, 0, 0.5); /* brighter golden border on hover */
+}
+/* Stylish Festival Schedule event boxes */
+section#events .event {
+  background: linear-gradient(135deg, #ffffff, #fef9f0); /* soft gradient */
+  border-radius: 16px;       /* slightly more rounded */
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), inset 0 0 8px rgba(255, 204, 0, 0.1); /* 3D + inner glow */
+  border: 2px solid rgba(255, 204, 0, 0.3); /* subtle golden border */
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative floating sparkle effect inside box */
+section#events .event::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255, 204, 0, 0.15) 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+/* Hover effect */
+section#events .event:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18), inset 0 0 12px rgba(255, 204, 0, 0.15);
+  border-color: rgba(255, 204, 0, 0.5); /* brighter golden border on hover */
+}
+
+
+
 
 
 
