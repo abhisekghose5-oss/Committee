@@ -311,7 +311,7 @@ function donateUPI(app) {
     phonepe: "8249481673@ybl",
     gpay: "8249481@ybl",
     paytm: "8280016651@pthdfc",
-    whatsapp: "+91 8328986832", // replace whatsapp with number if you want direct WhatsApp payment
+    whatsapp: "+918328986832", // replace whatsapp with number if you want direct WhatsApp payment
   };
 
   const upiId = upiIds[app] || "8249481673@ybl"; // Default UPI ID
@@ -390,7 +390,7 @@ function showToast(message) {
 // COMPLETE UPI + WHATSAPP SYSTEM
 // ========================================
 let currentAmount = "101";
-const COMMITTEE_PHONE = "+91 8328986832"; // CHANGE YOUR NUMBER
+const COMMITTEE_PHONE = "+918328986832"; // CHANGE YOUR NUMBER
 const UPI_ID = "8249481673@ybl"; // CHANGE YOUR UPI ID
 
 // 1️⃣ Amount buttons
