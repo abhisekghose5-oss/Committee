@@ -1,207 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <link rel="stylesheet" href="mystyle.css">
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Official website of Ganesh Puja Committee, Punanga — events, gallery, members, donations, and contact information." />
-  <title>GANESH PUJA COMMITTEE • Punanga</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-
-    :root {
-      --primary:#0055a4;
-      --primary-dark:#003366;
-      --accent:#ffcc00;
-      --bg:#f5f5f5;
-      --text:#333;
-      --card:#fff;
-      --radius:14px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:'Roboto',sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.6}
-    a{color:inherit}
-    /* Header / Hero */
-    header{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;text-align:center;padding:56px 20px}
-    header h1{margin:0;font-size:2.6rem;letter-spacing:.5px}
-    header p{margin:.5rem 0 1.25rem;font-size:1.05rem;opacity:.95}
-    .cta-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:#fff;color:var(--primary-dark);font-weight:700;text-decoration:none;box-shadow:0 6px 14px rgba(0,0,0,.15);transition:transform .2s,opacity .2s}
-    .btn:hover{transform:translateY(-1px);opacity:.95}
-    .btn-outline{background:transparent;color:#fff;border:2px solid #fff}
-
-    /* Nav */
-    nav{position:sticky;top:0;z-index:1000;background:var(--primary);box-shadow:0 4px 8px rgba(0,0,0,.1)}
-    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
-    .brand{font-weight:800;color:#fff;letter-spacing:.5px}
-    .links a{color:#fff;text-decoration:none;margin:0 10px;font-weight:700}
-    .links a:hover{color:var(--accent)}
-
-    /* Layout */
-    main{max-width:1100px;margin:auto;padding:22px}
-    section{background:var(--card);border-radius:var(--radius);padding:22px;margin:0 0 26px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
-    h2{color:var(--primary-dark);margin-top:0}
-
-    /* Grid helpers */
-    .grid{display:grid;gap:16px}
-    .two{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .three{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-
-    /* Events */
-    .event{padding:14px;border:1px solid #e8e8e8;border-radius:12px}
-    .event h3{margin:.2rem 0}
-    .badge{display:inline-block;background:var(--primary);color:#fff;border-radius:999px;padding:2px 10px;font-size:.8rem;margin-left:8px}
-
-    /* Members */
-    .card{padding:16px;border:1px solid #eee;border-radius:12px}
-    .card h4{margin:.2rem 0}
-
-    /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .gallery img{width:100%;border-radius:10px;cursor:pointer;display:block;transition:transform .25s}
-    .gallery img:hover{transform:scale(1.03)}
-
-    /* Donate */
-    .donate-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:center}
-    .qr{width:100%;max-width:220px;border-radius:12px;border:1px dashed #ccc;padding:8px;background:#fff}
-    .upi{font-weight:800;color:var(--primary-dark)}
-    
-
-    /* Contact */
-    form{display:grid;gap:12px}
-    input,textarea,select,button{padding:12px;font-size:1rem;border-radius:10px;border:1px solid #d9d9d9}
-    button{background:var(--primary);color:#fff;border:none;font-weight:800;cursor:pointer}
-    button:hover{background:var(--primary-dark)}
-
-    /* Footer */
-    footer{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;text-align:center;padding:26px;margin-top:28px}
-    .foot-links a{color:#fff;text-decoration:none;margin:0 10px;font-weight:700}
-    .foot-links a:hover{color:var(--accent)}
-
-    /* Back to top */
-    #toTop{position:fixed;right:14px;bottom:14px;display:none;padding:10px 14px;border-radius:999px;background:var(--primary);color:#fff;border:none;cursor:pointer;box-shadow:0 8px 16px rgba(0,0,0,.2)}
- .join-btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #007BFF; /* Blue */
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
-    .join-btn:hover {
-      background-color: #0056b3; /* Darker Blue */
-    }  
-   
-    /* new  */
-
-
-        body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
-    }
-
-    section#gallery {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    section#gallery h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    section#gallery p {
-      margin-bottom: 20px;
-      color: #555;
-    }
-
-    /* Responsive Gallery Grid */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
-      overflow: auto;
-      padding-top: 60px;
-    }
-
-    .modal-content {
-      display: block;
-      margin: auto;
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 10px;
-    }
-
-    .close {
-      position: absolute;
-      top: 20px; right: 30px;
-      color: white;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .close:hover {
-      color: red;
-    }
-
-    #caption {
-      margin: 15px auto;
-      text-align: center;
-      color: #ccc;
-      font-size: 1.2rem;
-    }
-
- /* End new  */
-
-
-
- /* new profile photo */
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GANESH PUJA COMMITTEE • Punanga</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- js file -->
+  <!-- js -->
+
   <script src="script.js" defer></script>
-<!-- js file -->
+
 
   <!-- HERO -->
   <header>
@@ -212,6 +28,8 @@
       <a class="btn btn-outline" href="https://www.instagram.com/ganapati_puja_committee?igsh=MWg4YjRpOXh1Mms0bw==" target="_blank" rel="noopener">Join Instagram</a>
     </div>
   </header>
+
+
 
   <!-- 🕉️ GANESH CHATURTHI COUNTDOWN -->
 <section class="countdown-hero">
@@ -239,7 +57,6 @@
     </div>
   </div>
 </section>
-<!-- 🕉️ GANESH CHATURTHI COUNTDOWN -->
 
 
   <!-- NAV -->
@@ -282,438 +99,16 @@
       </div>
     </section>
 
-      text-align: center;
-      padding: 50px;
-    }
-
-
-
-      <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">"
-  <title>Profile Picture</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      text-align: center;
-      padding: 50px;
-      margin: 0;
-    }
-    
-
-    
-
-    .profile-pic {
-      width: 100px;         /* small size */
-      height: 100px;
-      border-radius: 50%;   /* round shape */
-      object-fit: cover;
-      border: 3px solid #444;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
-    }
-
-    .profile-pic:hover {
-      transform: scale(1.1);  /* zoom in on hover */
-      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-      border-color: #ff5722;  /* glowing border color */
-    }
-
-    /* New Code */
-
-     body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-    }
-
-    section#members {
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    section#members h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
-
-    /* Grid layout */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-
-    .profile-pic {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #444;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s, border-color 0.3s;
-    }
-
-    .profile-pic:hover {
-      transform: scale(1.1);
-      border-color: #ff5722;
-    }
-
-    .card h4 {
-      margin-top: 15px;
-      font-size: 1.1rem;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    /* End new profile */
-
-
-    
-    /*  Backgrouund photo addd */
-
-    body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
-  line-height: 1.6;
-
-  /* Background image */
-  background-image: url("https://raw.githubusercontent.com/abhisekghose5-oss/Committee/18c274f9991c5a2f2e5a89fc3d5d4aac6c632aec/Admin7.jpg"); /* Replace with your image URL */
-  background-size: cover;       /* Make it cover the entire page */
-  background-position: center;  /* Center the image */
-  background-repeat: no-repeat; /* Don't repeat */
-  background-attachment: fixed; /* Stays in place on scroll */
-  
-  /* Optional: add overlay to make text readable */
-  position: relative;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(255,255,255,0.4); /* white overlay with 40% opacity */
-  z-index: 0;
-}
-
-main, header, section, footer {
-  position: relative; /* make content appear above overlay */
-  z-index: 1;
-}
-
-
-/* End Background photo */
-
-
-
-/* Trannsforent background */
-
-
-
-section,
-.card,
-.event {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-section:hover,
-.card:hover,
-.event:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-header {
-  background: url('your-background.jpg') no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed; /* parallax effect */
-}
-
-
-const faders = document.querySelectorAll('.fade-in');
-window.addEventListener('scroll', () => {
-  faders.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100) {
-      el.classList.add('visible');
-    }
-  });
-});
-
-
-.btn, .join-btn {
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn:hover, .join-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-}
-
-
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  filter: brightness(1.05);
-}
-
-/* About section with transparent background */
-section#about {
-  background-color: rgba(255, 255, 255, 0.7); /* white with 70% opacity */
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  color: #333; /* text color */
-}
-
-
-section#events,
-section#members {
-  background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Header text in blue */
-header h1,
-header p {
-  color: #0055a4; /* blue color */
-}
-
-
-/* Headings inside all sections */
-section h2,
-section h3,
-section h4 {
-  color: #0055a4; /* blue color */
-}
-
-
-/* Get Directions button */
-header .btn {
-  background-color: #0055a4; /* blue */
-  color: #fff;               /* white text */
-  border: none;              /* remove border */
-}
-
-header .btn:hover {
-  background-color: #003366; /* darker blue on hover */
-  transform: translateY(-2px);
-}
-
-/* Instagram button (outline style) */
-header .btn-outline {
-  background-color: #0055a4; /* blue background */
-  color: #fff;
-  border: 2px solid #0055a4; /* match border */
-}
-
-header .btn-outline:hover {
-  background-color: #003366; /* darker blue on hover */
-  border-color: #003366;
-  transform: translateY(-2px);
-}
-
-
-/* Admin Gallery section transparent background */
-section#gallery {
-  background-color: rgba(255, 255, 255, 0.75); /* white with 75% opacity */
-  border-radius: 12px;                          /* rounded corners */
-  padding: 25px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);   /* subtle 3D lift */
-}
-
-
-/* Donate / Support the Puja section transparent background */
-section#donate {
-  background-color: rgba(255, 255, 255, 0.75); /* white with 75% opacity */
-  border-radius: 12px;                          /* rounded corners */
-  padding: 25px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);   /* subtle 3D lift */
-}
-
-/* Stylish Festival Schedule event boxes */
-section#events .event {
-  background: linear-gradient(135deg, #ffffff, #fef9f0); /* soft gradient */
-  border-radius: 16px;       /* slightly more rounded */
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), inset 0 0 8px rgba(255, 204, 0, 0.1); /* 3D + inner glow */
-  border: 2px solid rgba(255, 204, 0, 0.3); /* subtle golden border */
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Decorative floating sparkle effect inside box */
-section#events .event::after {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle, rgba(255, 204, 0, 0.15) 0%, transparent 70%);
-  top: -10%;
-  left: -10%;
-  transform: rotate(45deg);
-  pointer-events: none;
-}
-
-/* Hover effect */
-section#events .event:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18), inset 0 0 12px rgba(255, 204, 0, 0.15);
-  border-color: rgba(255, 204, 0, 0.5); /* brighter golden border on hover */
-}
-/* Stylish Festival Schedule event boxes */
-section#events .event {
-  background: linear-gradient(135deg, #ffffff, #fef9f0); /* soft gradient */
-  border-radius: 16px;       /* slightly more rounded */
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), inset 0 0 8px rgba(255, 204, 0, 0.1); /* 3D + inner glow */
-  border: 2px solid rgba(255, 204, 0, 0.3); /* subtle golden border */
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Decorative floating sparkle effect inside box */
-section#events .event::after {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle, rgba(255, 204, 0, 0.15) 0%, transparent 70%);
-  top: -10%;
-  left: -10%;
-  transform: rotate(45deg);
-  pointer-events: none;
-}
-
-/* Hover effect */
-section#events .event:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18), inset 0 0 12px rgba(255, 204, 0, 0.15);
-  border-color: rgba(255, 204, 0, 0.5); /* brighter golden border on hover */
-}
-
-
-
-
-
-
-/* End Transforent background */
-
-
-
-  </style>
-  
-
-
-
-
-  <!-- HERO -->
-  <header>
-    <h1>GANESH PUJA COMMITTEE • PUNANGA</h1>
-    <p><h2>Celebrating 6 Glorious Years of Devotion and Community Service 🙏🎉</h2></p>
-    <div class="cta-wrap">
-      <!-- TODO: Replace with your real map link -->
-      <a class="btn" href="https://maps.app.goo.gl/fgUYoy8r14NccckC8" target="_blank" rel="noopener">Get Directions</a>
-      <!-- TODO: Replace with real WhatsApp group invite link -->
-      <a class="btn btn-outline" href="https://www.instagram.com/ganapati_puja_committee?igsh=MWg4YjRpOXh1Mms0bw==" target="_blank" rel="noopener">Join Instagram</a>
-    </div>
-  </header>
-
-
-  <!-- NAV -->
-  <nav aria-label="Main navigation">
-    <div class="nav-inner">
-      <div class="brand">Ganesh Puja Committee Punanga</div>
-      <div class="links">
-        <a href="#about">About</a>
-        <a href="#events">Events</a>
-        <a href="#members">Members</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#donate">Donate</a>
-        <a href="#contact">Join</a>
-      </div>
-    </div>
-  </nav>
-
-   
- <!-- End NAV -->
-  <main>
-
-
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About the Committee</h2>
-      <p><strong>Shree Shree Ganesh Puja Committee, Punanga</strong> began in <strong>2020</strong>. With the blessings of Lord Ganesha and with your support, we proudly celebrate our <strong>6th anniversary</strong>. Our mission is to organise inclusive , and a meaningful Ganesh Chaturthi celebration for all.</p>
-
-<section id="about"> <h3>Our Journy of Ganesh Puja : </h3><h3>Written By Anshuman Banarjee</h3>
-<p> Our Ganesh Puja journey began humbly, with just me—Anshuman—alongside my friends Subham and Abhishek. In a small space, with very little money, we set up our very first puja. It wasn’t grand, but the devotion in our hearts made it special. The second year, the puja grew a little bigger. This time, our families came forward with their support, and we felt the strength of togetherness.
-
-By the third year, the celebration reached another level. With the active help of our villagers, everything was more organized and beautiful. The puja had become more than just ours—it had become our community’s pride. The fourth year brought an even bigger step forward. With a large murti and strong support from both parents and villagers, the festival truly blossomed into a grand occasion.
-
-The fifth year saw a well-decorated mandap, a bigger Ganesh murti, and a sense of joy that spread across the entire village. And now, as we prepare for the sixth, with the efforts of me, Subham, Abhishek, and Omm, the puja is set to become the grandest yet—a true journey from zero to hero.</p>
-</section>
-      <div class="grid two">
-        <div class="card">
-          <h3>Our Motto</h3>
-          <p>“<em>Vasudhaiva Kutumbakam</em> — the world is one family.” We welcome everyone to participate and volunteer.</p>
-        </div>
-        <div class="card">
-          <h3>Location </h3>
-          <p><strong>Punanga</strong> • Morning puja <strong>10:00 PM</strong>. Sandhya puja .<strong>7:00</strong> during the festival days. See Events below for the full schedule.</p>
-        </div>
-      </div>
-    </section>
-<!--End  ABOUT -->
-
-
-
     <!-- EVENTS / SCHEDULE -->
     <section id="events">
       <h2>Festival Schedule</h2>
       <div class="grid two">
         <div class="event">
           <h3>Dt-26: Agamn of Ganpati  <span class="badge">Opening</span></h3>
-           <p> Singhasan sthapana </p>       </div>
-       
-           <div class="event">
+          <p> Singhasan sthapana </p>       
+        </div>
+        
+        <div class="event">
           <h3>Dt-27: Pranapratishtha <span class="badge">PUJA</span></h3>
           <p><h4>Morning: </h4>Kalash Sthapana ,Maha Arati ,Pushpanjai ,Prasad Seban </p>
           <p> <h4>Evening :</h4> Sandhya  Arati , Prasad Sevan</p>
@@ -728,256 +123,193 @@ The fifth year saw a well-decorated mandap, a bigger Ganesh murti, and a sense o
           <h3>Dt-29 : Visarjan Procession </h3>
           <p>Visarjan Jatra</p>
         </div>
-      <!--  <div class="event">
-          <h3>Day 5: Visarjan Procession <span class="badge">Grand</span></h3>
-          <p>Procession starts at 4:00 PM. Join with discipline and devotion.</p>
-        </div>-->
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2>Admin Gallery</h2>
+      <p>Click on the images to view in full size.</p>
+      <div class="gallery">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/committee.jpg" alt="Committee Group" onclick="openModal(this)">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin5.jpg" alt="Coming Soon" onclick="openModal(this)">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin6.jpg" alt="Event Highlights" onclick="openModal(this)">
+
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin1.jpg" alt="Event Highlights" onclick="openModal(this)">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin2.jpg" alt="Event Highlights" onclick="openModal(this)">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin3.jpg" alt="Event Highlights" onclick="openModal(this)">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin5.jpg" alt="Event Highlights" onclick="openModal(this)">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin6.jpg" alt="Event Highlights" onclick="openModal(this)">
+        
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/18c274f9991c5a2f2e5a89fc3d5d4aac6c632aec/Admin7.jpg" onclick="openModal(this)">
+        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/ganesh.jpg" alt="Ganesh Idol" onclick="openModal(this)">
       </div>
     </section>
 
     <!-- MEMBERS -->
-    <!--<section id="members">
+    <section id="members">
       <h2>Committee Members</h2>
-      <div class="grid three">
-        <div class="card"><h4>Abhisek Ghose</h4><p> </p></div>
-        <div class="card"><h4>Subham Banerjee</h4><p> </p></div>
-        <div class="card"><h4>Anshuman Banerjee</h4><p> </p></div>
-        <div class="card"><h4>Ommkarnath Goswami</h4><p> </p></div>-->
-        <!-- Add more members as needed -->
+      <div class="grid">
+        <div class="card">
+          <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/44569db3423b711def46002d5e9828dab184588d/Abhisek.jpg" alt="Abhisek Ghose" class="profile-pic">
+          <h4>Abhisek Ghose</h4>
+          <p>Member</p>
+        </div>
+        <div class="card">
+          <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/4923d76336490c3ac67196ecc9604b7e3943f62f/Subham.jpg.jpg" alt="Subham Banerjee" class="profile-pic">
+          <h4>Subham Banerjee</h4>
+          <p>Member</p>
+        </div>
+        <div class="card">
+          <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/a9faf814658261405cb0d901cfc3f7b98a4d1ef0/Anshuman.jpg" alt="Anshuman Banerjee" class="profile-pic">
+          <h4>Anshuman Banerjee</h4>
+          <p>Member</p>
+        </div>
+        <div class="card">
+          <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/a9faf814658261405cb0d901cfc3f7b98a4d1ef0/omm.jpg" alt="Ommkarnath Goswami" class="profile-pic">
+          <h4>Ommkarnath Goswami</h4>
+          <p>Member</p>
+        </div>
       </div>
     </section>
-
- <!-- End EVENTS / SCHEDULE -->
-
-
-
-    <!--new Gallery-->
-
-
-    <!-- GALLERY -->
-  <section id="gallery">
-    <h2>Admin Gallery</h2>
-    <p>Click on the images to view in full size.</p>
-    <div class="gallery">
-     
-      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/committee.jpg" alt="Committee Group" onclick="openModal(this)">
-      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin5.jpg" alt="Coming Soon" onclick="openModal(this)">
-      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin6.jpg" alt="Event Highlights" onclick="openModal(this)">
-
-      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin1.jpg" alt="Event Highlights" onclick="openModal(this)">
-      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin2.jpg" alt="Event Highlights" onclick="openModal(this)">
-      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin3.jpg" alt="Event Highlights" onclick="openModal(this)">
-      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin5.jpg" alt="Event Highlights" onclick="openModal(this)">
-      <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin6.jpg" alt="Event Highlights" onclick="openModal(this)">
-      
-       <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/18c274f9991c5a2f2e5a89fc3d5d4aac6c632aec/Admin7.jpg" onclick="openModal(this)">
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/ganesh.jpg" alt="Ganesh Idol" onclick="openModal(this)">
-      
-    </div>
-  </section>
-
-  <!-- Modal -->
-  <div id="imgModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImg">
-    <div id="caption"></div>
-  </div>
-
-  <script>
-    function openModal(img) {
-      document.getElementById("imgModal").style.display = "block";
-      document.getElementById("modalImg").src = img.src;
-      document.getElementById("caption").innerHTML = img.alt;
-    }
-
-    function closeModal() {
-      document.getElementById("imgModal").style.display = "none";
-    }
-
-    // Optional: Close modal on click outside image
-    window.onclick = function(event) {
-      const modal = document.getElementById("imgModal");
-      if (event.target === modal) {
-        closeModal();
-      }
-    }
-  </script>
-
-<!--End new Gallary-->
-
-<!--new profile -->
-
-
-
-  <section id="members">
-    <h2>Committee Members</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/44569db3423b711def46002d5e9828dab184588d/Abhisek.jpg" alt="Abhisek Ghose" class="profile-pic">
-        <h4>Abhisek Ghose</h4>
-        <p>Member</p>
-      </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/4923d76336490c3ac67196ecc9604b7e3943f62f/Subham.jpg.jpg" alt="Subham Banerjee" class="profile-pic">
-        <h4>Subham Banerjee</h4>
-        <p>Member</p>
-      </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/a9faf814658261405cb0d901cfc3f7b98a4d1ef0/Anshuman.jpg" alt="Anshuman Banerjee" class="profile-pic">
-        <h4>Anshuman Banerjee</h4>
-        <p>Member</p>
-      </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/a9faf814658261405cb0d901cfc3f7b98a4d1ef0/omm.jpg" alt="Ommkarnath Goswami" class="profile-pic">
-        <h4>Ommkarnath Goswami</h4>
-        <p>Member</p>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!--End new profile-->
-</body>
-
-
 
     <!-- DONATE -->
-    <section id="donate">
-      <h2>Support the Puja</h2>
-      <div class="donate-box">
-        <div>
-          <p>Your contributions help us run social initiatives and organise the festival smoothly. You can donate via UPI or bank transfer.</p>
-        <!--  <p>UPI ID: <span class="upi">your-upi@bank</span></p>-->
-          <p>
-            <a class="btn" href="#contact">Become a Member</a>
-            <!-- TODO: Replace with your payment link (e.g., Razorpay/Paytm/Google Pay) -->
-           <!-- <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Donate Online</a>-->
-          </p>
-        </div>
-        <!-- Put your real QR code image in /images and update src -->
-        <img class="qr" src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/Pujaupi.jpg"/>
+<!-- 💰 COMPLETE DONATION SECTION with AUTO WHATSAPP -->
+<section id="donate">
+  <h2>🤲 Support Ganesh Puja 2026</h2>
+  <div class="donate-grid">
+    
+    <!-- UPI Quick Pay + Amount Selector -->
+    <div class="upi-quick-pay">
+      <h3>💸 Donate Instantly</h3>
+      <p>1️⃣ Choose Amount → 2️⃣ Pay → 3️⃣ WhatsApp Auto-Sent!</p>
+      
+      <!-- Quick Amounts -->
+      <div class="quick-amounts">
+        <button class="amt-btn active" data-amount="101">₹101</button>
+        <button class="amt-btn" data-amount="501">₹501</button>
+        <button class="amt-btn" data-amount="1101">₹1101</button>
+        <button class="amt-btn custom" data-amount="custom">Custom</button>
       </div>
-    </section>
+      
+      <!-- UPI Apps -->
+      <div class="upi-btn-group">
+        <button class="upi-btn phonepe" data-app="phonepe">
+          📱 PhonePe
+        </button>
+        <button class="upi-btn gpay" data-app="gpay">
+          💳 Google Pay
+        </button>
+        <button class="upi-btn paytm" data-app="paytm">
+          ⚡ Paytm
+        </button>
+      </div>
+      
+      <div class="auto-message">
+        💬 <strong>Auto Message:</strong> "Committee Puja Donation 2026 🙏"
+      </div>
+    </div>
+
+    <!-- QR Code Backup -->
+    <div class="qr-section">
+      <h3>🖥️ Or Scan QR</h3>
+      <img class="qr-code" 
+           src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/Pujaupi.jpg" 
+           alt="UPI QR Code" 
+           onclick="copyUPI()">
+      <p class="upi-id">ganeshpuja.punanga@paytm</p>
+      <button class="copy-btn" onclick="copyUPI()">📋 Copy UPI</button>
+    </div>
+  </div>
+
+  <!-- Thank You Note -->
+  
+
+<div class="thankyou-note">
+    <p>🙏 Your generous contribution helps organize the grandest Ganesh Puja yet! <br>
+    <em>Every rupee counts towards decorations, prasad, and community celebrations.</em></p>
+  </div>
+
+<!-- SUCCESS CONFIRMATION FORM (Hidden) -->
+<div class="confirm-section" id="confirmSection" style="display:none;">
+  <div class="success-checkmark">
+    <div class="check-circle"></div>
+    <div class="check-mark"></div>
+  </div>
+  <h3>✅ Payment Success!</h3>
+  <p>Enter name → Send WhatsApp to Committee (1-click)</p>
+  
+  <form id="whatsappForm" class="confirm-form">
+    <input type="text" id="donorName" placeholder="Your Name *" required>
+    <input type="tel" id="donorPhone" placeholder="Phone (optional)">
+    <button type="submit" class="confirm-btn">📱 Send WhatsApp Notification</button>
+  </form>
+</div>
+
+  
+  
+</section>
+
 
     <!-- CONTACT -->
     <section id="contact">
       <h2>Join our Committee .</h2>
-      <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
-       
-       
-        <!-- Replace with your Formspree endpoint or use mailto: -->
-       <!-- <input type="text" name="name" placeholder="Your Name" required />
-        <input type="tel" name="phone" placeholder="Phone Number" required />
-        <input type="email" name="email" placeholder="Email (optional)" />
-        <select name="interest" required>
-          <option value="">I want to…</option>
-          <option value="volunteer">Volunteer</option>
-          <option value="donate">Donate</option>
-          <option value="perform">Perform in Cultural Night</option>
-          <option value="general">General Query</option>
-        </select>
-        <textarea name="message" rows="5" placeholder="Your message"></textarea>
-        <button type="submit">Send</button>
-      </form>-->
-     <!-- <p style="margin-top:8px"> <h2>email us:</h2> <a href="abhisekghose5@gmail.com"></a><a class="btn" href="#contact">Join Us</a></a></p>--><!--shreeshreeganeshpujacommitteep@gmail.comshreeshreeganeshpujacommitteep@gmail.com-->
       <p style="margin-top:8px"> 
-      <a class="join-btn " href="mailto:abhisekghose5@gmail.com?subject=Feedback&body=Hello,%0A%0APlease sheare your details below:%0A%0AName:%20%0AEmail:%20%0AContact%20No:%20%0A%0AThank%20you!">Join</a>
+        <a class="join-btn " href="mailto:abhisekghose5@gmail.com?subject=Feedback&body=Hello,%0A%0APlease sheare your details below:%0A%0AName:%20%0AEmail:%20%0AContact%20No:%20%0A%0AThank%20you!">Join</a>
+      </p>
     </section>
   </main>
 
   <footer>
     <p class="foot-links">
-      <!-- Replace # with your real links -->
       <a href="https://www.instagram.com/ganapati_puja_committee?igsh=MWg4YjRpOXh1Mms0bw==" target="_blank" rel="noopener">Instagram</a> •
       <a href="https://www.facebook.com/share/1CcvVjbtqf/" target="_blank" rel="noopener">Facebook</a> •
-     
-     <!-- <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
-    </p>-->
+    </p>
     <p>&copy; <span id="yr"></span> Ganesh Puja Committee, Punanga ,Jagatsinghapur. All rights reserved.</p>
   </footer>
 
+
+  
+
+
+<!-- Modal for gallery -->  
+<div id="imgModal" class="modal" aria-hidden="true" role="dialog">
+  <span class="close" onclick="closeModal()" aria-label="Close">&times;</span>
+  <img class="modal-content" id="modalImg" alt="Expanded gallery image" />
+  <div id="caption"></div>
+</div>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h2>Gallery</h2>
+  <p>Click images to view full size</p>
+  <div class="gallery">
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/ganesh.jpg" alt="Ganesh Idol" onclick="openModal(this)" />
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/committee.jpg" alt="Committee Group" onclick="openModal(this)" />
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/new%20Ganesh1.jpg" alt="Ganesh Puja 1" onclick="openModal(this)" />
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh%20%20.jpg" alt="Ganesh Puja 2" onclick="openModal(this)" />
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh2.jpg" alt="Ganesh Puja 3" onclick="openModal(this)" />
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh3.jpg" alt="Ganesh Puja 4" onclick="openModal(this)" />
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh4.jpg" alt="Ganesh Puja 5" onclick="openModal(this)" />
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh5.jpg" alt="Ganesh Puja 6" onclick="openModal(this)" />
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh6.jpg" alt="Ganesh Puja 7" onclick="openModal(this)" />
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh7.jpg" alt="Ganesh Puja 8" onclick="openModal(this)" />
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/18c274f9991c5a2f2e5a89fc3d5d4aac6c632aec/Admin8.jpg" alt="Event Highlights" onclick="openModal(this)" />
+    <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb631
+75ecadc400f4a6af118/Admin1.jpg" alt="Event Highlights" onclick="openModal(this)" />
+
+
   <!-- Modal for gallery -->
+
+  
   <div id="imgModal" class="modal" aria-hidden="true" role="dialog">
     <span class="close" onclick="closeModal()" aria-label="Close">&times;</span>
     <img class="modal-content" id="modalImg" alt="Expanded gallery image" />
+    <div id="caption"></div>
   </div>
 
   <button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
 
-  <!--Gallary-->
-
-
-    <!-- GALLERY -->
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <p>image<code>images/</code>.</p>
-      <div class="gallery">
-        <!-- NOTE: Replace src with your actual image paths or URLs -->
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/ganesh.jpg" onclick="openModal(this)" />
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/committee.jpg" onclick="openModal(this)" />
-          
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/new%20Ganesh1.jpg" onclick="openModal(this)" />
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh%20%20.jpg" onclick="openModal(this)" />
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh2.jpg" onclick="openModal(this)" />
-
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh3.jpg" onclick="openModal(this)" />
-
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh4.jpg" onclick="openModal(this)" />
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh5.jpg" onclick="openModal(this)" />
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh6.jpg" onclick="openModal(this)" />
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh7.jpg" onclick="openModal(this)" />
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/18c274f9991c5a2f2e5a89fc3d5d4aac6c632aec/Admin8.jpg" onclick="openModal(this)" />
-
-        <img src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin6.jpg" alt="Event Highlights" onclick="openModal(this)">
-        <img src=" https://raw.githubusercontent.com/abhisekghose5-oss/Committee/8c4a3a019fb22c044e405349c9870f02f57c65f6/newGanesh8.jpg" alt="Event Highlights" onclick="openModal(this)">
-        <img src="https://github.com/abhisekghose5-oss/Committee/blob/main/newGanesh99.jpg?raw=true" alt="Event Highlights" onclick="openModal(this)">
-       
-
-        <img src=" "onclick="openModal(this)" />
-       
- <img src="images/ganesh-4.jpg" alt="Cultural Program" onclick="openModal(this)" />
-
-
-  <!-- Video Player -->
-  <video width="400" controls>
-    <source src="your-video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <!--end Video Player-->
-
-      </div>
-    </section>
-  <!--End Gallary-->
-
-  <script>
-    // Year in footer
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // Gallery modal
-    function openModal(img){
-      const modal = document.getElementById('imgModal');
-      document.getElementById('modalImg').src = img.src;
-      modal.style.display = 'block';
-      modal.setAttribute('aria-hidden','false');
-    }
-    function closeModal(){
-      const modal = document.getElementById('imgModal');
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden','true');
-    }
-    window.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
-
-    // Back to top visibility
-    const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll',()=>{
-      toTop.style.display = window.scrollY>300 ? 'block':'none';
-    });
-  </script>
+  
 </body>
-
-
-
 </html>
