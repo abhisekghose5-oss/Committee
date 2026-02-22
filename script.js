@@ -308,13 +308,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function donateUPI(app) {
   const upiIds = {
-    phonepe: "ganeshpuja.punanga@paytm",
-    gpay: "abhisekghose5@ybl",
-    paytm: "ganeshpuja.punanga@paytm",
-    whatsapp: "abhisekghose5@paytm",
+    phonepe: "8249481673@ybl",
+    gpay: "8249481673@ybl",
+    paytm: "8249481673@ybl",
+    whatsapp: "abhisekghose5@paytm", // replace whatsapp with number if you want direct WhatsApp payment
   };
 
-  const upiId = upiIds[app] || "abhisekghose5@ybl";
+  const upiId = upiIds[app] || "8249481673@ybl"; // Default UPI ID
   const message = encodeURIComponent("Committee Puja Donation 2026 🙏");
 
   // UPI Deep Link URLs
@@ -336,8 +336,8 @@ function donateUPI(app) {
   showToast("🔔 Opening " + app.toUpperCase() + "...");
 }
 
-function copyUPI() {
-  const upiId = "ganeshpuja.punanga@paytm";
+/*function copyUPI() {
+  const upiId = "   "; // CHANGE YOUR UPI ID
   navigator.clipboard
     .writeText(upiId)
     .then(() => {
@@ -354,7 +354,7 @@ function copyUPI() {
       showToast("✅ UPI ID copied!");
     });
 }
-
+*/
 function showToast(message) {
   // Create toast notification
   const toast = document.createElement("div");
@@ -389,8 +389,8 @@ function showToast(message) {
 // COMPLETE UPI + WHATSAPP SYSTEM
 // ========================================
 let currentAmount = "101";
-const COMMITTEE_PHONE = "919937109492"; // CHANGE YOUR NUMBER
-const UPI_ID = "ganeshpuja.punanga@paytm";
+const COMMITTEE_PHONE = "8328986832"; // CHANGE YOUR NUMBER
+const UPI_ID = "8249481673@ybl"; // CHANGE YOUR UPI ID
 
 // 1️⃣ Amount buttons
 document.querySelectorAll(".amt-btn").forEach((btn) => {
