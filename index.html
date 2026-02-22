@@ -1,16 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Redirecting — Ganesh Puja Committee</title>
-    <meta http-equiv="refresh" content="0;url=Committee/index.html">
-    <meta name="robots" content="noindex">
-  </head>
-  <body>
-    Redirecting to the Committee website — <a href="Committee/index.html">open site</a>.
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official website of Ganesh Puja Committee, Punanga — events, gallery, members, donations, and contact information." />
+  <title>GANESH PUJA COMMITTEE • Punanga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+
+    :root {
+      --primary:#0055a4;
+      --primary-dark:#003366;
+      --accent:#ffcc00;
+      --bg:#f5f5f5;
+      --text:#333;
+      --card:#fff;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Roboto',sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit}
+    /* Header / Hero */
+    header{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;text-align:center;padding:56px 20px}
+    header h1{margin:0;font-size:2.6rem;letter-spacing:.5px}
+    header p{margin:.5rem 0 1.25rem;font-size:1.05rem;opacity:.95}
+    .cta-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:#fff;color:var(--primary-dark);font-weight:700;text-decoration:none;box-shadow:0 6px 14px rgba(0,0,0,.15);transition:transform .2s,opacity .2s}
+    .btn:hover{transform:translateY(-1px);opacity:.95}
+    .btn-outline{background:transparent;color:#fff;border:2px solid #fff}
+
+    /* Nav */
+    nav{position:sticky;top:0;z-index:1000;background:var(--primary);box-shadow:0 4px 8px rgba(0,0,0,.1)}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+    .brand{font-weight:800;color:#fff;letter-spacing:.5px}
+    .links a{color:#fff;text-decoration:none;margin:0 10px;font-weight:700}
+    .links a:hover{color:var(--accent)}
+
+    /* Layout */
+    main{max-width:1100px;margin:auto;padding:22px}
+    section{background:var(--card);border-radius:var(--radius);padding:22px;margin:0 0 26px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+    h2{color:var(--primary-dark);margin-top:0}
+
+    /* Grid helpers */
+    .grid{display:grid;gap:16px}
+    .two{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .three{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+    /* Events */
+    .event{padding:14px;border:1px solid #e8e8e8;border-radius:12px}
+    .event h3{margin:.2rem 0}
+    .badge{display:inline-block;background:var(--primary);color:#fff;border-radius:999px;padding:2px 10px;font-size:.8rem;margin-left:8px}
+
+    /* Members */
+    .card{padding:16px;border:1px solid #eee;border-radius:12px}
+    .card h4{margin:.2rem 0}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
     .gallery img{width:100%;border-radius:10px;cursor:pointer;display:block;transition:transform .25s}
     .gallery img:hover{transform:scale(1.03)}
 
