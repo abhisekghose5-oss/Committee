@@ -311,7 +311,7 @@ function donateUPI(app) {
     phonepe: "8249481673@ybl",
     gpay: "8249481@ybl",
     paytm: "8280016651@pthdfc",
-    whatsapp: "+918328986832", // replace whatsapp with number if you want direct WhatsApp payment
+    whatsapp: "918328986832", // replace whatsapp with number if you want direct WhatsApp payment
   };
 
   const upiId = upiIds[app] || "8249481673@ybl"; // Default UPI ID
@@ -390,7 +390,7 @@ function showToast(message) {
 // COMPLETE UPI + WHATSAPP SYSTEM
 // ========================================
 let currentAmount = "101";
-const COMMITTEE_PHONE = "+918328986832"; // CHANGE YOUR NUMBER
+const COMMITTEE_PHONE = "918328986832"; // CHANGE YOUR NUMBER
 const UPI_ID = "8249481673@ybl"; // CHANGE YOUR UPI ID
 
 // 1️⃣ Amount buttons
@@ -465,25 +465,36 @@ document.querySelectorAll(".upi-btn").forEach((btn) => {
 });
 
 // 3️⃣ WhatsApp Form
-document.getElementById("whatsappForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const name = document.getElementById("donorName").value;
-  const Message = document.getElementById("donorMessage").value;
 
-  const message = `🎉 DONATION CONFIRMED 🎉\n\n🙏 Donor: ${name}\n💰 Amount: ₹${currentAmount}\n📱 Phone: ${phone || "N/A"}\n⏰ ${new Date().toLocaleString("en-IN")}\n\nGanapati Bappa Morya! 🙌`;
+document
+  .getElementById("whatsappForm")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  window.open(
-    `https://wa.me/${COMMITTEE_PHONE}?text=${encodeURIComponent(message)}`,
-    "_blank",
-  );
+    const name = document.getElementById("donorName").value;
+    const message = document.getElementById("donormessage").value;
 
-  // Reset
-  setTimeout(() => {
-    document.getElementById("confirmSection").style.display = "none";
-    document.querySelector(".upi-quick-pay").style.display = "block";
-    document.getElementById("whatsappForm").reset();
-  }, 2000);
-});
+    if (!name) {
+      alert("Please enter your name");
+      return;
+    }
+
+    // Replace with your WhatsApp number (country code required)
+    const phoneNumber = "918328986832";
+
+    const text = `Payment Successful!\nName: ${name}\nMessage: ${message}`;
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+    window.open(whatsappURL, "_blank");
+  });
+
+// Reset
+setTimeout(() => {
+  document.getElementById("confirmSection").style.display = "none";
+  document.querySelector(".upi-quick-pay").style.display = "block";
+  document.getElementById("whatsappForm").reset();
+}, 2000);
 
 // 4️⃣ UPI Links
 function openUpiPayment(app, amount) {
