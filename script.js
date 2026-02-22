@@ -308,13 +308,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function donateUPI(app) {
   const upiIds = {
-    phonepe: "82494@ybl",
+    phonepe: "8249481673@ybl",
     gpay: "8249481@ybl",
-    paytm: "824948@ybl",
-    whatsapp: "abhisekghose5@paytm", // replace whatsapp with number if you want direct WhatsApp payment
+    paytm: "8280016651@pthdfc",
+    whatsapp: "+91 8328986832", // replace whatsapp with number if you want direct WhatsApp payment
   };
 
-  const upiId = upiIds[app] || "82494@ybl"; // Default UPI ID
+  const upiId = upiIds[app] || "8249481673@ybl"; // Default UPI ID
   const message = encodeURIComponent("Committee Puja Donation 2026 🙏");
 
   // UPI Deep Link URLs
@@ -390,8 +390,8 @@ function showToast(message) {
 // COMPLETE UPI + WHATSAPP SYSTEM
 // ========================================
 let currentAmount = "101";
-const COMMITTEE_PHONE = "8328986832"; // CHANGE YOUR NUMBER
-const UPI_ID = "82494@ybl"; // CHANGE YOUR UPI ID
+const COMMITTEE_PHONE = "+91 8328986832"; // CHANGE YOUR NUMBER
+const UPI_ID = "8249481673@ybl"; // CHANGE YOUR UPI ID
 
 // 1️⃣ Amount buttons
 // 🔥 FIXED AMOUNT HANDLER (Replace your existing one)
@@ -468,7 +468,7 @@ document.querySelectorAll(".upi-btn").forEach((btn) => {
 document.getElementById("whatsappForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const name = document.getElementById("donorName").value;
-  const phone = document.getElementById("donorPhone").value;
+  const Message = document.getElementById("donorMessage").value;
 
   const message = `🎉 DONATION CONFIRMED 🎉\n\n🙏 Donor: ${name}\n💰 Amount: ₹${currentAmount}\n📱 Phone: ${phone || "N/A"}\n⏰ ${new Date().toLocaleString("en-IN")}\n\nGanapati Bappa Morya! 🙌`;
 
@@ -499,4 +499,38 @@ function openUpiPayment(app, amount) {
 function copyUPI() {
   navigator.clipboard.writeText(UPI_ID);
   alert("✅ UPI ID copied!");
+}
+
+// 5️⃣ Button Loading State
+//optiional
+
+// Add after your existing JS
+document.querySelectorAll(".amt-btn, .upi-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    this.classList.add("loading");
+    setTimeout(() => this.classList.remove("loading"), 1500);
+  });
+
+  // Keyboard support
+  btn.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      this.click();
+    }
+  });
+});
+
+// Success animation
+function celebrateDonation() {
+  // Confetti effect
+  for (let i = 0; i < 50; i++) {
+    const confetti = document.createElement("div");
+    confetti.style.cssText = `
+      position: fixed; width: 10px; height: 10px; background: #ff6b35;
+      left: ${Math.random() * 100}vw; top: -10px; z-index: 9999;
+      animation: fall 3s linear forwards;
+    `;
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 3000);
+  }
 }
