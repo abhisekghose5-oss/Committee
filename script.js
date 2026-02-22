@@ -308,13 +308,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function donateUPI(app) {
   const upiIds = {
-    phonepe: "8249481673@ybl",
-    gpay: "8249481673@ybl",
-    paytm: "8249481673@ybl",
+    phonepe: "82494@ybl",
+    gpay: "8249481@ybl",
+    paytm: "824948@ybl",
     whatsapp: "abhisekghose5@paytm", // replace whatsapp with number if you want direct WhatsApp payment
   };
 
-  const upiId = upiIds[app] || "8249481673@ybl"; // Default UPI ID
+  const upiId = upiIds[app] || "82494@ybl"; // Default UPI ID
   const message = encodeURIComponent("Committee Puja Donation 2026 🙏");
 
   // UPI Deep Link URLs
@@ -355,6 +355,7 @@ function donateUPI(app) {
     });
 }
 */
+
 function showToast(message) {
   // Create toast notification
   const toast = document.createElement("div");
@@ -390,21 +391,61 @@ function showToast(message) {
 // ========================================
 let currentAmount = "101";
 const COMMITTEE_PHONE = "8328986832"; // CHANGE YOUR NUMBER
-const UPI_ID = "8249481673@ybl"; // CHANGE YOUR UPI ID
+const UPI_ID = "82494@ybl"; // CHANGE YOUR UPI ID
 
 // 1️⃣ Amount buttons
+// 🔥 FIXED AMOUNT HANDLER (Replace your existing one)
+
+// Handle ALL amount buttons (fixed + custom)
+
+// Your existing UPI handler should already use currentAmount
+
 document.querySelectorAll(".amt-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", function () {
+    document.querySelectorAll(".upi-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const app = btn.dataset.app;
+        openUpiPayment(app, currentAmount); // Uses ₹101, ₹501, OR custom amount!
+      });
+    });
+
+    // Remove active class from all buttons
     document
       .querySelectorAll(".amt-btn")
       .forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    currentAmount =
-      btn.dataset.amount === "custom"
-        ? document.getElementById("customAmount")?.value || "101"
-        : btn.dataset.amount;
+    this.classList.add("active");
+
+    const amount = this.dataset.amount;
+
+    if (amount === "custom") {
+      // Show custom input
+      document.getElementById("customInputSection").style.display = "flex";
+      document.getElementById("customAmountInput").focus();
+    } else {
+      // Hide custom input + set fixed amount
+      document.getElementById("customInputSection").style.display = "none";
+      currentAmount = amount;
+      showToast(`✅ Amount set: ₹${currentAmount}`);
+    }
   });
 });
+
+// 🔥 Confirm Custom Amount
+function confirmCustomAmount() {
+  const customValue = parseInt(
+    document.getElementById("customAmountInput").value,
+  );
+
+  if (customValue >= 10) {
+    currentAmount = customValue.toString();
+    document.getElementById("customInputSection").style.display = "none";
+    document.getElementById("customAmountBtn").classList.add("active");
+    showToast(`✅ Custom amount: ₹${currentAmount}`);
+  } else {
+    showToast("⚠️ Minimum ₹10 required!", "error");
+    document.getElementById("customAmountInput").focus();
+  }
+}
 
 // 2️⃣ UPI Payment + Auto WhatsApp
 document.querySelectorAll(".upi-btn").forEach((btn) => {

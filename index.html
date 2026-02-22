@@ -185,12 +185,21 @@
       <p>1️⃣ Choose Amount → 2️⃣ Pay → 3️⃣ WhatsApp Auto-Sent!</p>
       
       <!-- Quick Amounts -->
-      <div class="quick-amounts">
-        <button class="amt-btn active" data-amount="101">₹101</button>
-        <button class="amt-btn" data-amount="501">₹501</button>
-        <button class="amt-btn" data-amount="1101">₹1101</button>
-        <button class="amt-btn custom" data-amount="custom">Custom</button>
-      </div>
+     <!-- Replace your existing quick-amounts section with this -->
+<div class="quick-amounts">
+  <button class="amt-btn active" data-amount="101">₹101</button>
+  <button class="amt-btn" data-amount="501">₹501</button>
+  <button class="amt-btn" data-amount="1101">₹1101</button>
+  <button class="amt-btn custom" id="customAmountBtn">💰 Custom</button>
+</div>
+
+<!-- ADD THIS NEW SECTION (right after quick-amounts) -->
+<div class="custom-input-section" id="customInputSection" style="display:none; margin: 15px 0;">
+  <input type="number" id="customAmountInput" placeholder="Enter amount (₹10 min)" min="10" value="250">
+  <button class="confirm-custom-btn" onclick="confirmCustomAmount()">✅ Confirm</button>
+</div>
+
+
       
       <!-- UPI Apps -->
       <div class="upi-btn-group">
@@ -206,7 +215,7 @@
       </div>
       
       <div class="auto-message">
-        💬 <strong>Auto Message:</strong> "Committee Puja Donation 2026 🙏"
+        💬 <strong>Message:</strong> "Committee Puja Donation 2026 🙏"
       </div>
     </div>
 
@@ -217,7 +226,7 @@
            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/Pujaupi.jpg" 
            alt="UPI QR Code" 
            onclick="copyUPI()">
-      <p class="upi-id">ganeshpuja.punanga@paytm</p>
+      <p class="upi-id">       </p>
       <button class="copy-btn" onclick="copyUPI()">📋 Copy UPI</button>
     </div>
   </div>
