@@ -39,12 +39,51 @@ window.addEventListener("scroll", () => {
 
 // ========================================
 // GANESH PUJA COMMITTEE - ENHANCED JS
-// Professional Gallery + Site Interactions
+// Professional Gallery + Site Interactions + Countdown
 // ========================================
 
 document.addEventListener("DOMContentLoaded", function () {
   // 🎯 Year in footer
   document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // 🎯 Countdown Timer
+  const pujaDate = new Date("2026-09-14T11:00:00").getTime();
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = pujaDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days
+      .toString()
+      .padStart(2, "0");
+    document.getElementById("hours").textContent = hours
+      .toString()
+      .padStart(2, "0");
+    document.getElementById("minutes").textContent = minutes
+      .toString()
+      .padStart(2, "0");
+    document.getElementById("seconds").textContent = seconds
+      .toString()
+      .padStart(2, "0");
+
+    if (distance < 0) {
+      document
+        .querySelector(".countdown-display")
+        .classList.add("countdown-celebration");
+      document.getElementById("days").textContent = "🎉";
+      document.getElementById("hours").textContent = "PUJA";
+      document.getElementById("minutes").textContent = "TIME";
+      document.getElementById("seconds").textContent = "🙏";
+    }
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 
   // 📱 Gallery & Modal System
   const gallery = {
@@ -55,46 +94,37 @@ document.addEventListener("DOMContentLoaded", function () {
       '.gallery img[onclick="openModal(this)"]',
     ),
 
-    // 🔓 Open Modal with smooth animation
     open(img) {
       this.modal.style.display = "block";
       this.modalImg.src = img.src;
       this.caption.innerHTML = img.alt || "Ganesh Puja Gallery";
       this.modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden"; // Prevent background scroll
-
-      // 🎨 Add loaded class for smooth transition
+      document.body.style.overflow = "hidden";
       this.modalImg.classList.add("loaded");
     },
 
-    // 🔒 Close Modal
     close() {
       this.modal.style.display = "none";
       this.modalImg.classList.remove("loaded");
       this.modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = ""; // Restore scroll
+      document.body.style.overflow = "";
     },
   };
 
-  // 🖱️ Event Listeners
-  // Close on X button
   document
     .querySelector(".close")
     .addEventListener("click", () => gallery.close());
 
-  // Close on outside click
   gallery.modal.addEventListener("click", (e) => {
     if (e.target === gallery.modal) gallery.close();
   });
 
-  // Close on ESC key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && gallery.modal.style.display === "block") {
       gallery.close();
     }
   });
 
-  // 🖼️ Image click handlers (for onclick compatibility)
   window.openModal = function (img) {
     gallery.open(img);
   };
@@ -102,8 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gallery.close();
   };
 
-  // ⚡ Image Loading Optimization
-  gallery.images.forEach((img, index) => {
+  gallery.images.forEach((img) => {
     img.onload = () => img.classList.add("loaded");
     img.onerror = () => {
       img.src =
@@ -158,7 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, observerOptions);
 
-  // Observe all sections for animation
   document.querySelectorAll("section").forEach((section) => {
     observer.observe(section);
   });
@@ -184,7 +212,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // 📱 Mobile Menu Toggle (Future-proof)
   const navLinks = document.querySelector(".links");
   if (window.innerWidth <= 768) {
-    // Add hamburger menu functionality if needed
     navLinks.style.flexDirection = "column";
   }
 
@@ -198,7 +225,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function createParticles(burst = 20) {
     if (!allowParticles) return;
     const hero = document.querySelector("header");
-    const allowedBurst = Math.min(burst, Math.max(0, maxParticles - particleCount));
+    const allowedBurst = Math.min(
+      burst,
+      Math.max(0, maxParticles - particleCount),
+    );
     for (let i = 0; i < allowedBurst; i++) {
       setTimeout(() => {
         if (particleCount >= maxParticles) return;
@@ -228,13 +258,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Start particles every 12 seconds; single gentle burst on load
   if (allowParticles) {
     setInterval(() => createParticles(12), 12000);
     createParticles(16);
   }
 
-  // 💫 Custom CSS for particles (add to your CSS)
   const style = document.createElement("style");
   style.textContent = `
     @keyframes float {
@@ -250,7 +278,6 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
   document.head.appendChild(style);
 
-  // 🎉 Success: Console message
   console.log(
     "🌟 Ganesh Puja Committee Website Enhanced! Ready for Ganesh Chaturthi 2026 ✨",
   );
@@ -266,62 +293,6 @@ if ("serviceWorker" in navigator) {
     });
   });
 }
-
-// ========================================
-// GANESH PUJA COUNTDOWN + ENHANCED FEATURES
-// ========================================
-
-document.addEventListener("DOMContentLoaded", function () {
-  // 🎯 Countdown Timer
-  const pujaDate = new Date("2026-09-14T11:00:00").getTime();
-
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = pujaDate - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-    );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Update display
-    document.getElementById("days").textContent = days
-      .toString()
-      .padStart(2, "0");
-    document.getElementById("hours").textContent = hours
-      .toString()
-      .padStart(2, "0");
-    document.getElementById("minutes").textContent = minutes
-      .toString()
-      .padStart(2, "0");
-    document.getElementById("seconds").textContent = seconds
-      .toString()
-      .padStart(2, "0");
-
-    // Celebration mode (when countdown reaches 0)
-    if (distance < 0) {
-      document
-        .querySelector(".countdown-display")
-        .classList.add("countdown-celebration");
-      document.getElementById("days").textContent = "🎉";
-      document.getElementById("hours").textContent = "PUJA";
-      document.getElementById("minutes").textContent = "TIME";
-      document.getElementById("seconds").textContent = "🙏";
-    }
-  }
-
-  // Update every second
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
-  // ... (keep all your existing gallery, scroll, etc. code from previous JS)
-
-  console.log(
-    "🕉️ Ganesh Chaturthi 2026 Countdown Active! Ganapati Bappa Morya! 🙏",
-  );
-});
 
 // ========================================
 // UPI DONATION FUNCTIONS
