@@ -25,10 +25,16 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });
 
-// Back to top visibility
+// Back to top visibility (throttled to avoid scroll jank)
 const toTop = document.getElementById("toTop");
+let scrollScheduled = false;
 window.addEventListener("scroll", () => {
-  toTop.style.display = window.scrollY > 300 ? "block" : "none";
+  if (scrollScheduled) return;
+  scrollScheduled = true;
+  requestAnimationFrame(() => {
+    toTop.style.display = window.scrollY > 300 ? "block" : "none";
+    scrollScheduled = false;
+  });
 });
 
 // ========================================
@@ -182,11 +188,20 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.style.flexDirection = "column";
   }
 
-  // 🌈 Add particle effect on hero section (Optional festive touch)
-  function createParticles() {
+  // 🌈 Particle effect on hero section (rate-limited for mobile/performance)
+  const allowParticles =
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+    !window.matchMedia("(max-width: 768px)").matches;
+  let particleCount = 0;
+  const maxParticles = 40;
+
+  function createParticles(burst = 20) {
+    if (!allowParticles) return;
     const hero = document.querySelector("header");
-    for (let i = 0; i < 20; i++) {
+    const allowedBurst = Math.min(burst, Math.max(0, maxParticles - particleCount));
+    for (let i = 0; i < allowedBurst; i++) {
       setTimeout(() => {
+        if (particleCount >= maxParticles) return;
         const particle = document.createElement("div");
         particle.style.cssText = `
           position: absolute;
@@ -203,15 +218,21 @@ document.addEventListener("DOMContentLoaded", function () {
         particle.innerHTML = "✨";
         particle.style.fontSize = "12px";
         hero.appendChild(particle);
+        particleCount += 1;
 
-        setTimeout(() => particle.remove(), 5000);
+        setTimeout(() => {
+          particle.remove();
+          particleCount = Math.max(0, particleCount - 1);
+        }, 5000);
       }, i * 200);
     }
   }
 
-  // Start particles every 8 seconds
-  setInterval(createParticles, 8000);
-  createParticles(); // Initial burst
+  // Start particles every 12 seconds; single gentle burst on load
+  if (allowParticles) {
+    setInterval(() => createParticles(12), 12000);
+    createParticles(16);
+  }
 
   // 💫 Custom CSS for particles (add to your CSS)
   const style = document.createElement("style");
