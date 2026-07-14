@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gallery page for Ganesh Puja Committee."
+    />
+    <title>Gallery • Ganesh Puja Committee</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=2" />
+  </head>
+  <body>
+    <main style="padding-top: 24px; padding-bottom: 24px">
+      <section id="gallery">
+        <h2>Gallery</h2>
+        <p>Click images to view full size</p>
+        <div class="gallery">
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/ganesh.jpg"
+            alt="Ganesh Idol"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/58ba6fadf752599b0aa932f13ab726166ebc81dd/committee.jpg"
+            alt="Committee Group"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/new%20Ganesh1.jpg"
+            alt="Ganesh Puja 1"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh%20%20.jpg"
+            alt="Ganesh Puja 2"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh2.jpg"
+            alt="Ganesh Puja 3"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh3.jpg"
+            alt="Ganesh Puja 4"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh4.jpg"
+            alt="Ganesh Puja 5"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh5.jpg"
+            alt="Ganesh Puja 6"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh6.jpg"
+            alt="Ganesh Puja 7"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3affdd0fe065dd3e64a24beefc940280cce00c76/newGanesh7.jpg"
+            alt="Ganesh Puja 8"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/18c274f9991c5a2f2e5a89fc3d5d4aac6c632aec/Admin8.jpg"
+            alt="Event Highlights"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+          <img
+            src="https://raw.githubusercontent.com/abhisekghose5-oss/Committee/3c085a14037f78cafb63175ecadc400f4a6af118/Admin1.jpg"
+            alt="Event Highlights"
+            onclick="openModal(this)"
+            loading="lazy"
+            width="1200"
+            height="800"
+          />
+        </div>
+      </section>
+    </main>
+
+    <div id="imgModal" class="modal" aria-hidden="true" role="dialog">
+      <span class="close" onclick="closeModal()" aria-label="Close"
+        >&times;</span
+      >
+      <img class="modal-content" id="modalImg" alt="Expanded gallery image" />
+      <div id="caption"></div>
+    </div>
+
+    <script>
+      function openModal(img) {
+        document.getElementById("imgModal").style.display = "block";
+        document.getElementById("modalImg").src = img.src;
+        document.getElementById("caption").innerHTML = img.alt || "";
+        document
+          .getElementById("imgModal")
+          .setAttribute("aria-hidden", "false");
+      }
+
+      function closeModal() {
+        document.getElementById("imgModal").style.display = "none";
+        document.getElementById("imgModal").setAttribute("aria-hidden", "true");
+      }
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      window.addEventListener("click", (event) => {
+        const modal = document.getElementById("imgModal");
+        if (event.target === modal) closeModal();
+      });
+    </script>
+  </body>
+</html>
