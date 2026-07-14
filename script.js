@@ -210,10 +210,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // 📱 Mobile Menu Toggle (Future-proof)
+  const navInner = document.querySelector(".nav-inner");
   const navLinks = document.querySelector(".links");
-  if (window.innerWidth <= 768) {
-    navLinks.style.flexDirection = "column";
+
+  function applyMobileStructure() {
+    const isMobile = window.innerWidth <= 768;
+
+    if (navInner) {
+      navInner.style.flexDirection = isMobile ? "column" : "";
+      navInner.style.alignItems = isMobile ? "flex-start" : "";
+      navInner.style.gap = isMobile ? "10px" : "";
+    }
+
+    if (navLinks) {
+      navLinks.style.display = isMobile ? "flex" : "";
+      navLinks.style.flexDirection = isMobile ? "column" : "";
+      navLinks.style.flexWrap = isMobile ? "wrap" : "";
+      navLinks.style.gap = isMobile ? "8px 12px" : "";
+    }
   }
+
+  applyMobileStructure();
+  window.addEventListener("resize", applyMobileStructure);
 
   // 🌈 Particle effect on hero section (rate-limited for mobile/performance)
   const allowParticles =

@@ -1326,6 +1326,207 @@ footer{
   100% { transform: rotate(360deg); }
 }
 
+/* ========================================
+   MOBILE STRUCTURE OVERRIDES
+   Keep the desktop layout intact, but make
+   the page read cleanly on smaller screens.
+   ======================================== */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: top center;
+  }
+
+  header {
+    padding: 36px 16px 28px;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+
+  header h2,
+  .countdown-hero p {
+    font-size: 1rem;
+  }
+
+  .countdown-hero {
+    padding: 36px 16px;
+    background-attachment: scroll;
+  }
+
+  .countdown-display {
+    padding: 18px;
+    gap: 12px;
+  }
+
+  #countdown span[id] {
+    font-size: 2rem;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .brand {
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+
+  .links a {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  main {
+    padding: 14px;
+  }
+
+  section {
+    padding: 18px 16px;
+    margin-bottom: 18px;
+    border-radius: 18px;
+  }
+
+  section:hover {
+    transform: none;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  .grid.two,
+  .grid.three,
+  .donate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event,
+  .card {
+    padding: 16px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 12px 0 0;
+  }
+
+  .gallery img {
+    height: 190px;
+    border-radius: 16px;
+  }
+
+  #gallery {
+    padding: 24px 16px;
+    margin: 0;
+  }
+
+  #gallery h2 {
+    font-size: 1.8rem;
+  }
+
+  .upi-quick-pay,
+  .qr-section,
+  .confirm-section {
+    width: 100%;
+  }
+
+  .quick-amounts,
+  .upi-btn-group,
+  .custom-input-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .amt-btn,
+  .upi-btn,
+  .confirm-custom-btn,
+  .copy-btn,
+  .join-btn {
+    width: 100%;
+  }
+
+  .upi-btn {
+    min-width: 0;
+    padding: 15px 16px;
+  }
+
+  .qr-code {
+    width: 160px;
+    height: 160px;
+  }
+
+  .confirm-section {
+    left: 12px;
+    right: 12px;
+    top: auto;
+    bottom: 12px;
+    transform: none;
+    max-width: none;
+    padding: 24px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .countdown-hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .countdown-date {
+    font-size: 1rem;
+  }
+
+  #countdown span[id] {
+    font-size: 1.7rem;
+  }
+
+  .gallery img {
+    height: 175px;
+  }
+
+  .close {
+    top: 14px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    font-size: 2rem;
+  }
+
+  .modal {
+    padding: 50px 12px 20px;
+  }
+
+  .modal-content {
+    max-height: 72vh;
+  }
+
+  #caption {
+    font-size: 1rem;
+    padding: 12px 14px;
+  }
+}
+
 
 
 
