@@ -875,6 +875,7 @@ footer{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: var(--accent);
   margin: 0 0 10px 0;
   text-shadow: 0 0 30px rgba(255,204,0,0.5);
   animation: glow 2s ease-in-out infinite alternate;
@@ -905,11 +906,11 @@ footer{
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.10);
   backdrop-filter: blur(20px);
   padding: 30px;
   border-radius: 25px;
-  border: 2px solid rgba(255,204,0,0.3);
+  border: 2px solid rgba(255,204,0,0.35);
   box-shadow: 
     0 25px 50px rgba(0,0,0,0.3),
     inset 0 1px 0 rgba(255,255,255,0.3);
@@ -918,6 +919,12 @@ footer{
 .countdown-item {
   text-align: center;
   min-width: 100px;
+  flex: 1 1 120px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(242,247,255,0.92));
+  border: 1px solid rgba(255,204,0,0.18);
+  border-radius: 18px;
+  padding: 18px 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 
 #countdown span[id] {
@@ -941,7 +948,7 @@ footer{
 
 .countdown-item .label {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.9);
+  color: var(--primary-dark);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -950,9 +957,10 @@ footer{
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .countdown-display {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 18px;
   }
   
   #countdown span[id] {
@@ -962,6 +970,10 @@ footer{
   .countdown-hero h2 {
     font-size: 2.2rem;
   }
+
+  .countdown-item {
+    padding: 16px 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -969,6 +981,16 @@ footer{
     padding: 40px 15px;
   }
   
+  .countdown-display {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .countdown-item {
+    min-width: 0;
+    padding: 14px 8px;
+  }
+
   #countdown span[id] {
     font-size: 1.8rem;
   }
@@ -1556,12 +1578,14 @@ footer{
   }
 
   .countdown-display {
-    padding: 18px;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 16px;
+    gap: 10px;
   }
 
   #countdown span[id] {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
 
   nav {
@@ -1692,12 +1716,17 @@ footer{
     font-size: 1.8rem;
   }
 
+  .countdown-display {
+    padding: 14px;
+    gap: 8px;
+  }
+
   .countdown-date {
     font-size: 1rem;
   }
 
   #countdown span[id] {
-    font-size: 1.7rem;
+    font-size: 1.65rem;
   }
 
   .gallery img {
