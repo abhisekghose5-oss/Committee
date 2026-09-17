@@ -1,557 +1,384 @@
-// Year in footer
-document.getElementById("yr").textContent = new Date().getFullYear();
-
-// Gallery modal
-function openModal(img) {
-  document.getElementById("imgModal").style.display = "block";
-  document.getElementById("modalImg").src = img.src;
-  document.getElementById("caption").innerHTML = img.alt || "";
-  document.getElementById("imgModal").setAttribute("aria-hidden", "false");
-}
-function closeModal() {
-  document.getElementById("imgModal").style.display = "none";
-  document.getElementById("imgModal").setAttribute("aria-hidden", "true");
-}
-
-// Close modal on click outside image
-window.onclick = function (event) {
-  const modal = document.getElementById("imgModal");
-  if (event.target === modal) {
-    closeModal();
-  }
-};
-
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
-});
-
-// Back to top visibility (throttled to avoid scroll jank)
-const toTop = document.getElementById("toTop");
-let scrollScheduled = false;
-window.addEventListener("scroll", () => {
-  if (scrollScheduled) return;
-  scrollScheduled = true;
-  requestAnimationFrame(() => {
-    toTop.style.display = window.scrollY > 300 ? "block" : "none";
-    scrollScheduled = false;
-  });
-});
-
 // ========================================
 // GANESH PUJA COMMITTEE - ENHANCED JS
-// Professional Gallery + Site Interactions + Countdown
+// Vakratunda Puja Committee, Punanga
 // ========================================
 
-document.addEventListener("DOMContentLoaded", function () {
-  // 🎯 Year in footer
-  document.getElementById("yr").textContent = new Date().getFullYear();
+const COMMITTEE_PHONE = "918328986832";
+const UPI_ID = "8249481673@ybl";
+let currentAmount = "501"; // Default matches the active button in HTML
 
-  // 🎯 Countdown Timer
-  const pujaDate = new Date("2026-09-14T11:00:00").getTime();
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = pujaDate - now;
+// Toast Notification
+function showToast(message, type = "success") {
+  const existing = document.querySelector(".toast-notification");
+  if (existing) existing.remove();
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-    );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("days").textContent = days
-      .toString()
-      .padStart(2, "0");
-    document.getElementById("hours").textContent = hours
-      .toString()
-      .padStart(2, "0");
-    document.getElementById("minutes").textContent = minutes
-      .toString()
-      .padStart(2, "0");
-    document.getElementById("seconds").textContent = seconds
-      .toString()
-      .padStart(2, "0");
-
-    if (distance < 0) {
-      document
-        .querySelector(".countdown-display")
-        .classList.add("countdown-celebration");
-      document.getElementById("days").textContent = "🎉";
-      document.getElementById("hours").textContent = "PUJA";
-      document.getElementById("minutes").textContent = "TIME";
-      document.getElementById("seconds").textContent = "🙏";
-    }
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
-  // 📱 Gallery & Modal System
-  const gallery = {
-    modal: document.getElementById("imgModal"),
-    modalImg: document.getElementById("modalImg"),
-    caption: document.getElementById("caption"),
-    images: document.querySelectorAll(
-      '.gallery img[onclick="openModal(this)"]',
-    ),
-
-    open(img) {
-      this.modal.style.display = "block";
-      this.modalImg.src = img.src;
-      this.caption.innerHTML = img.alt || "Ganesh Puja Gallery";
-      this.modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-      this.modalImg.classList.add("loaded");
-    },
-
-    close() {
-      this.modal.style.display = "none";
-      this.modalImg.classList.remove("loaded");
-      this.modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    },
-  };
-
-  document
-    .querySelector(".close")
-    .addEventListener("click", () => gallery.close());
-
-  gallery.modal.addEventListener("click", (e) => {
-    if (e.target === gallery.modal) gallery.close();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && gallery.modal.style.display === "block") {
-      gallery.close();
-    }
-  });
-
-  window.openModal = function (img) {
-    gallery.open(img);
-  };
-  window.closeModal = function () {
-    gallery.close();
-  };
-
-  gallery.images.forEach((img) => {
-    img.onload = () => img.classList.add("loaded");
-    img.onerror = () => {
-      img.src =
-        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI5MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=";
-      img.alt = "Image not available";
-    };
-  });
-
-  // 🌟 Smooth Scroll Navigation
-  document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    });
-  });
-
-  // ⬆️ Back to Top Button
-  const toTopBtn = document.getElementById("toTop");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      toTopBtn.style.display = "block";
-      toTopBtn.style.opacity = "1";
-    } else {
-      toTopBtn.style.display = "none";
-    }
-  });
-
-  toTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-
-  // ✨ Fade-in Animation on Scroll
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("fade-in", "visible");
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll("section").forEach((section) => {
-    observer.observe(section);
-  });
-
-  // 🎭 Lazy Loading for Images (Performance)
-  if ("IntersectionObserver" in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src || img.src;
-          img.classList.remove("lazy");
-          imageObserver.unobserve(img);
-        }
-      });
-    });
-
-    document.querySelectorAll("img[data-src]").forEach((img) => {
-      imageObserver.observe(img);
-    });
-  }
-
-  // 📱 Mobile Menu Toggle (Future-proof)
-  const navInner = document.querySelector(".nav-inner");
-  const navLinks = document.querySelector(".links");
-
-  function applyMobileStructure() {
-    const isMobile = window.innerWidth <= 768;
-
-    if (navInner) {
-      navInner.style.flexDirection = isMobile ? "column" : "";
-      navInner.style.alignItems = isMobile ? "flex-start" : "";
-      navInner.style.gap = isMobile ? "10px" : "";
-    }
-
-    if (navLinks) {
-      navLinks.style.display = isMobile ? "flex" : "";
-      navLinks.style.flexDirection = isMobile ? "column" : "";
-      navLinks.style.flexWrap = isMobile ? "wrap" : "";
-      navLinks.style.gap = isMobile ? "8px 12px" : "";
-    }
-  }
-
-  applyMobileStructure();
-  window.addEventListener("resize", applyMobileStructure);
-
-  // 🌈 Particle effect on hero section (rate-limited for mobile/performance)
-  const allowParticles =
-    !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
-    !window.matchMedia("(max-width: 768px)").matches;
-  let particleCount = 0;
-  const maxParticles = 40;
-
-  function createParticles(burst = 20) {
-    if (!allowParticles) return;
-    const hero = document.querySelector("header");
-    const allowedBurst = Math.min(
-      burst,
-      Math.max(0, maxParticles - particleCount),
-    );
-    for (let i = 0; i < allowedBurst; i++) {
-      setTimeout(() => {
-        if (particleCount >= maxParticles) return;
-        const particle = document.createElement("div");
-        particle.style.cssText = `
-          position: absolute;
-          width: 4px;
-          height: 4px;
-          background: var(--accent);
-          border-radius: 50%;
-          pointer-events: none;
-          left: ${Math.random() * 100}%;
-          top: 100%;
-          animation: float ${3 + Math.random() * 2}s linear infinite;
-          z-index: 10;
-        `;
-        particle.innerHTML = "✨";
-        particle.style.fontSize = "12px";
-        hero.appendChild(particle);
-        particleCount += 1;
-
-        setTimeout(() => {
-          particle.remove();
-          particleCount = Math.max(0, particleCount - 1);
-        }, 5000);
-      }, i * 200);
-    }
-  }
-
-  if (allowParticles) {
-    setInterval(() => createParticles(12), 12000);
-    createParticles(16);
-  }
-
-  const style = document.createElement("style");
-  style.textContent = `
-    @keyframes float {
-      to {
-        transform: translateY(-100vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-    @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 20px rgba(255,204,0,0.5); }
-      50% { box-shadow: 0 0 40px rgba(255,204,0,0.8); }
-    }
-  `;
-  document.head.appendChild(style);
-
-  console.log(
-    "🌟 Ganesh Puja Committee Website Enhanced! Ready for Ganesh Chaturthi 2026 ✨",
-  );
-});
-
-// ========================================
-// PWA READY - Service Worker (Optional)
-// ========================================
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js").catch(() => {
-      // Ignore if no sw.js exists
-    });
-  });
-}
-
-// ========================================
-// UPI DONATION FUNCTIONS
-// ========================================
-
-function donateUPI(app) {
-  const upiIds = {
-    phonepe: "8249481673@ybl",
-    gpay: "8249481@ybl",
-    paytm: "8280016651@pthdfc",
-    whatsapp: "918328986832", // replace whatsapp with number if you want direct WhatsApp payment
-  };
-
-  const upiId = upiIds[app] || "8249481673@ybl"; // Default UPI ID
-  const message = encodeURIComponent("Committee Puja Donation 2026 🙏");
-
-  // UPI Deep Link URLs
-  const upiLinks = {
-    phonepe: `phonepe://pay?pa=${upiId}&pn=Ganesh Puja Committee&cu=INR&message=${message}`,
-    gpay: `tez://tezxlp://pay?pa=${upiId}&pn=Ganesh Puja Committee&am=&cu=INR&tn=${message}`,
-    paytm: `paytmmp://pay?pa=${upiId}&pn=Ganesh Puja Committee&amount=101&message=${message}`,
-    whatsapp: `whatsapp://pay?pa=${upiId}`,
-  };
-
-  const link =
-    upiLinks[app] ||
-    `upi://pay?pa=${upiId}&pn=Ganesh Puja Committee&cu=INR&tn=${message}`;
-
-  // Open UPI app
-  window.open(link, "_blank");
-
-  // Show success feedback
-  showToast("🔔 Opening " + app.toUpperCase() + "...");
-}
-
-/*function copyUPI() {
-  const upiId = "   "; // CHANGE YOUR UPI ID
-  navigator.clipboard
-    .writeText(upiId)
-    .then(() => {
-      showToast("✅ UPI ID copied! Paste in your UPI app");
-    })
-    .catch(() => {
-      // Fallback for older browsers
-      const textArea = document.createElement("textarea");
-      textArea.value = upiId;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textArea);
-      showToast("✅ UPI ID copied!");
-    });
-}
-*/
-
-function showToast(message) {
-  // Create toast notification
   const toast = document.createElement("div");
+  toast.className = "toast-notification";
   toast.style.cssText = `
     position: fixed;
     top: 20px;
     right: 20px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    background: ${type === "error" ? "linear-gradient(135deg, #d32f2f, #f44336)" : "linear-gradient(135deg, var(--primary, #0055a4), var(--accent, #ffcc00))"};
     color: white;
-    padding: 15px 25px;
+    padding: 14px 22px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    z-index: 9999;
+    z-index: 10001;
     font-weight: 600;
+    font-size: 0.95rem;
     transform: translateX(400px);
     transition: transform 0.3s ease;
+    max-width: 90vw;
   `;
   toast.textContent = message;
   document.body.appendChild(toast);
 
-  // Animate in
-  setTimeout(() => (toast.style.transform = "translateX(0)"), 100);
+  requestAnimationFrame(() => {
+    toast.style.transform = "translateX(0)";
+  });
 
-  // Animate out
   setTimeout(() => {
     toast.style.transform = "translateX(400px)";
-    setTimeout(() => document.body.removeChild(toast), 300);
+    setTimeout(() => toast.remove(), 350);
   }, 3000);
 }
 
-// ========================================
-// COMPLETE UPI + WHATSAPP SYSTEM
-// ========================================
-let currentAmount = "101";
-const COMMITTEE_PHONE = "918328986832"; // CHANGE YOUR NUMBER
-const UPI_ID = "8249481673@ybl"; // CHANGE YOUR UPI ID
+// Global Gallery Modal Functions
+function openModal(img) {
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const caption = document.getElementById("caption");
+  if (!modal || !modalImg) return;
 
-// 1️⃣ Amount buttons
-// 🔥 FIXED AMOUNT HANDLER (Replace your existing one)
+  modal.style.display = "block";
+  modalImg.src = img.src;
+  if (caption) caption.textContent = img.alt || "Ganesh Puja Committee Gallery";
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
 
-// Handle ALL amount buttons (fixed + custom)
+function closeModal() {
+  const modal = document.getElementById("imgModal");
+  if (!modal) return;
+  modal.style.display = "none";
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
 
-// Your existing UPI handler should already use currentAmount
-
-document.querySelectorAll(".amt-btn").forEach((btn) => {
-  btn.addEventListener("click", function () {
-    document.querySelectorAll(".upi-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const app = btn.dataset.app;
-        openUpiPayment(app, currentAmount); // Uses ₹101, ₹501, OR custom amount!
-      });
-    });
-
-    // Remove active class from all buttons
-    document
-      .querySelectorAll(".amt-btn")
-      .forEach((b) => b.classList.remove("active"));
-    this.classList.add("active");
-
-    const amount = this.dataset.amount;
-
-    if (amount === "custom") {
-      // Show custom input
-      document.getElementById("customInputSection").style.display = "flex";
-      document.getElementById("customAmountInput").focus();
-    } else {
-      // Hide custom input + set fixed amount
-      document.getElementById("customInputSection").style.display = "none";
-      currentAmount = amount;
-      showToast(`✅ Amount set: ₹${currentAmount}`);
-    }
-  });
-});
-
-// 🔥 Confirm Custom Amount
-function confirmCustomAmount() {
-  const customValue = parseInt(
-    document.getElementById("customAmountInput").value,
-  );
-
-  if (customValue >= 10) {
-    currentAmount = customValue.toString();
-    document.getElementById("customInputSection").style.display = "none";
-    document.getElementById("customAmountBtn").classList.add("active");
-    showToast(`✅ Custom amount: ₹${currentAmount}`);
+// Copy UPI ID
+function copyUPI() {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(UPI_ID)
+      .then(() => showToast(`✅ UPI ID copied: ${UPI_ID}`))
+      .catch(() => fallbackCopyUPI());
   } else {
-    showToast("⚠️ Minimum ₹10 required!", "error");
-    document.getElementById("customAmountInput").focus();
+    fallbackCopyUPI();
   }
 }
 
-// 2️⃣ UPI Payment + Auto WhatsApp
-document.querySelectorAll(".upi-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const app = btn.dataset.app;
+function fallbackCopyUPI() {
+  const textArea = document.createElement("textarea");
+  textArea.value = UPI_ID;
+  textArea.style.position = "fixed";
+  textArea.style.left = "-9999px";
+  document.body.appendChild(textArea);
+  textArea.select();
+  try {
+    document.execCommand("copy");
+    showToast(`✅ UPI ID copied: ${UPI_ID}`);
+  } catch (err) {
+    showToast(`UPI ID: ${UPI_ID}`);
+  }
+  document.body.removeChild(textArea);
+}
 
-    // Open UPI
-    openUpiPayment(app, currentAmount);
+// Custom Amount Confirmation
+function confirmCustomAmount() {
+  const input = document.getElementById("customAmountInput");
+  if (!input) return;
 
-    // Auto show confirmation after 2.5s
-    setTimeout(() => {
-      document.getElementById("confirmSection").style.display = "block";
-      document.querySelector(".upi-quick-pay").style.display = "none";
-      document.getElementById("donorName").focus();
-    }, 2500);
-  });
-});
+  const val = parseInt(input.value, 10);
+  if (val >= 10) {
+    currentAmount = val.toString();
+    const customSection = document.getElementById("customInputSection");
+    if (customSection) customSection.style.display = "none";
 
-// 3️⃣ WhatsApp Form
+    document.querySelectorAll(".amt-btn").forEach((b) => b.classList.remove("active"));
+    const customBtn = document.getElementById("customAmountBtn");
+    if (customBtn) customBtn.classList.add("active");
 
-document
-  .getElementById("whatsappForm")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
+    showToast(`✅ Custom amount set: ₹${currentAmount}`);
+  } else {
+    showToast("⚠️ Minimum ₹10 required!", "error");
+    input.focus();
+  }
+}
 
-    const name = document.getElementById("donorName").value;
-    const message = document.getElementById("donormessage").value;
+// Open UPI Payment
+function openUpiPayment(app, amount) {
+  const payeeName = "Ganesh Puja Committee";
+  const note = "Committee Puja Donation 2026";
+  const encodedParams = `pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(payeeName)}&am=${encodeURIComponent(amount)}&cu=INR&tn=${encodeURIComponent(note)}`;
 
-    if (!name) {
-      alert("Please enter your name");
+  const links = {
+    phonepe: `phonepe://pay?${encodedParams}`,
+    gpay: `tez://upi/pay?${encodedParams}`,
+    paytm: `paytmmp://pay?${encodedParams}`,
+  };
+
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const targetUrl = links[app] || `upi://pay?${encodedParams}`;
+
+  if (isMobile) {
+    showToast(`🔔 Opening ${app.toUpperCase()}...`);
+    window.location.href = targetUrl;
+  } else {
+    showToast(`📱 On desktop? Scan the QR code or copy UPI ID (${UPI_ID}) to pay ₹${amount}.`);
+  }
+}
+
+// Confetti Celebration
+function celebrateDonation() {
+  const colors = ["#ff6b35", "#ffcc00", "#0055a4", "#4caf50", "#e91e63"];
+  for (let i = 0; i < 40; i++) {
+    const confetti = document.createElement("div");
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.cssText = `
+      position: fixed;
+      width: ${8 + Math.random() * 6}px;
+      height: ${8 + Math.random() * 6}px;
+      background: ${color};
+      border-radius: ${Math.random() > 0.5 ? "50%" : "2px"};
+      left: ${Math.random() * 100}vw;
+      top: -15px;
+      z-index: 10002;
+      opacity: 0.9;
+      pointer-events: none;
+      animation: fallDown ${2.5 + Math.random() * 1.5}s linear forwards;
+    `;
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 4000);
+  }
+}
+
+// Close Confirmation Modal & Reset Form
+function closeConfirmSection() {
+  const confirmSection = document.getElementById("confirmSection");
+  const quickPay = document.querySelector(".upi-quick-pay");
+  if (confirmSection) confirmSection.style.display = "none";
+  if (quickPay) quickPay.style.display = "block";
+}
+
+// ========================================
+// DOM READY INITIALIZATION
+// ========================================
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. Footer Year
+  const yrEl = document.getElementById("yr");
+  if (yrEl) yrEl.textContent = new Date().getFullYear();
+
+  // 2. Countdown Timer (IST Timezone: 14 Sep 2026 11:00 AM)
+  const pujaDate = new Date("2026-09-14T11:00:00+05:30").getTime();
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+  const countdownDisplay = document.querySelector(".countdown-display");
+
+  function updateCountdown() {
+    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+    const now = new Date().getTime();
+    const distance = pujaDate - now;
+
+    if (distance <= 0) {
+      if (countdownDisplay) countdownDisplay.classList.add("countdown-celebration");
+      daysEl.textContent = "🎉";
+      hoursEl.textContent = "PUJA";
+      minutesEl.textContent = "TIME";
+      secondsEl.textContent = "🙏";
       return;
     }
 
-    // Replace with your WhatsApp number (country code required)
-    const phoneNumber = "918328986832";
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    const text = `Payment Successful!\nName: ${name}\nMessage: ${message}`;
-
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-
-    window.open(whatsappURL, "_blank");
-  });
-
-// Reset
-setTimeout(() => {
-  document.getElementById("confirmSection").style.display = "none";
-  document.querySelector(".upi-quick-pay").style.display = "block";
-  document.getElementById("whatsappForm").reset();
-}, 2000);
-
-// 4️⃣ UPI Links
-function openUpiPayment(app, amount) {
-  const params = `pa=${UPI_ID}&pn=Ganesh Puja Committee&am=${amount}&cu=INR&tn=Committee Puja Donation 2026 🙏`;
-  const links = {
-    gpay: `tez://pay?${params}`,
-    phonepe: `phonepe://pay?${params}`,
-    paytm: `paytmmp://pay?${params}`,
-  };
-  window.open(links[app] || `upi://pay?${params}`, "_blank");
-}
-
-function copyUPI() {
-  navigator.clipboard.writeText(UPI_ID);
-  alert("✅ UPI ID copied!");
-}
-
-// 5️⃣ Button Loading State
-//optiional
-
-// Add after your existing JS
-document.querySelectorAll(".amt-btn, .upi-btn").forEach((btn) => {
-  btn.addEventListener("click", function () {
-    this.classList.add("loading");
-    setTimeout(() => this.classList.remove("loading"), 1500);
-  });
-
-  // Keyboard support
-  btn.addEventListener("keydown", function (e) {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      this.click();
-    }
-  });
-});
-
-// Success animation
-function celebrateDonation() {
-  // Confetti effect
-  for (let i = 0; i < 50; i++) {
-    const confetti = document.createElement("div");
-    confetti.style.cssText = `
-      position: fixed; width: 10px; height: 10px; background: #ff6b35;
-      left: ${Math.random() * 100}vw; top: -10px; z-index: 9999;
-      animation: fall 3s linear forwards;
-    `;
-    document.body.appendChild(confetti);
-    setTimeout(() => confetti.remove(), 3000);
+    daysEl.textContent = days.toString().padStart(2, "0");
+    hoursEl.textContent = hours.toString().padStart(2, "0");
+    minutesEl.textContent = minutes.toString().padStart(2, "0");
+    secondsEl.textContent = seconds.toString().padStart(2, "0");
   }
-}
+
+  if (daysEl) {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
+  // 3. Modal Keydown and Outside-click Listeners
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+
+  const modal = document.getElementById("imgModal");
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  const modalCloseBtn = document.querySelector(".modal .close");
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener("click", closeModal);
+  }
+
+  // 4. Back to Top Button (single throttled scroll listener)
+  const toTop = document.getElementById("toTop");
+  if (toTop) {
+    let scrollScheduled = false;
+    window.addEventListener("scroll", () => {
+      if (scrollScheduled) return;
+      scrollScheduled = true;
+      requestAnimationFrame(() => {
+        toTop.style.display = window.scrollY > 300 ? "block" : "none";
+        scrollScheduled = false;
+      });
+    }, { passive: true });
+
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // 5. Smooth Scroll Navigation
+  document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (targetId && targetId !== "#") {
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  });
+
+  // 6. Section Fade-in Animation on Scroll
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in", "visible");
+        }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+
+    document.querySelectorAll("section").forEach((section) => {
+      observer.observe(section);
+    });
+  }
+
+  // 7. Donation Amount Buttons Handler (REGISTERED ONCE)
+  document.querySelectorAll(".amt-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".amt-btn").forEach((b) => b.classList.remove("active"));
+      this.classList.add("active");
+
+      const amount = this.dataset.amount;
+      const customSection = document.getElementById("customInputSection");
+
+      if (amount === "custom" || this.id === "customAmountBtn") {
+        if (customSection) {
+          customSection.style.display = "flex";
+          const input = document.getElementById("customAmountInput");
+          if (input) input.focus();
+        }
+      } else {
+        if (customSection) customSection.style.display = "none";
+        currentAmount = amount;
+        showToast(`✅ Amount set: ₹${currentAmount}`);
+      }
+    });
+  });
+
+  // 8. UPI App Payment Buttons Handler (REGISTERED ONCE)
+  document.querySelectorAll(".upi-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const app = this.dataset.app;
+      openUpiPayment(app, currentAmount);
+
+      // Show confirmation section with name input
+      setTimeout(() => {
+        const confirmSection = document.getElementById("confirmSection");
+        const quickPay = document.querySelector(".upi-quick-pay");
+        if (confirmSection) {
+          confirmSection.style.display = "block";
+          if (quickPay && window.innerWidth <= 768) {
+            quickPay.style.display = "none";
+          }
+          const nameInput = document.getElementById("donorName");
+          if (nameInput) nameInput.focus();
+        }
+      }, 1500);
+    });
+  });
+
+  // 9. Close Confirmation Section Button Handler
+  const closeConfirmBtn = document.getElementById("closeConfirmBtn");
+  if (closeConfirmBtn) {
+    closeConfirmBtn.addEventListener("click", closeConfirmSection);
+  }
+
+  // 10. WhatsApp Form Submission Handler
+  const whatsappForm = document.getElementById("whatsappForm");
+  if (whatsappForm) {
+    whatsappForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nameInput = document.getElementById("donorName");
+      const messageInput = document.getElementById("donormessage");
+      const name = nameInput ? nameInput.value.trim() : "";
+      const message = messageInput ? messageInput.value.trim() : "";
+
+      if (!name) {
+        showToast("Please enter your name", "error");
+        return;
+      }
+
+      const text = `🙏 *Ganesh Puja Donation 2026*\n*Name:* ${name}\n*Amount:* ₹${currentAmount}\n*Message:* ${message || "Ganapati Bappa Morya!"}`;
+      const whatsappURL = `https://wa.me/${COMMITTEE_PHONE}?text=${encodeURIComponent(text)}`;
+
+      window.open(whatsappURL, "_blank");
+      celebrateDonation();
+
+      setTimeout(() => {
+        whatsappForm.reset();
+        closeConfirmSection();
+        showToast("🙏 Thank you for your generous devotion & donation!");
+      }, 1200);
+    });
+  }
+
+  // 11. Custom Amount Input Enter Key Support
+  const customInput = document.getElementById("customAmountInput");
+  if (customInput) {
+    customInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        confirmCustomAmount();
+      }
+    });
+  }
+
+  // 12. Add Confetti Keyframe Style
+  const animStyle = document.createElement("style");
+  animStyle.textContent = `
+    @keyframes fallDown {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(animStyle);
+});
